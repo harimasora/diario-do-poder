@@ -1,6 +1,8 @@
 {
   "name": "diario-do-poder",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "9fb7058a"
 }
