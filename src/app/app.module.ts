@@ -11,16 +11,27 @@ import { AppComponent } from './app.component';
 
 import { Firebase } from '@ionic-native/firebase/ngx';
 
+import { environment } from './../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireFunctionsModule } from '@angular/fire/functions';
+import { AngularFireMessagingModule } from '@angular/fire/messaging';
+
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [
-    Firebase,
-    StatusBar,
-    SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
-  ],
-  bootstrap: [AppComponent]
+	declarations: [AppComponent],
+	entryComponents: [],
+	imports: [
+		BrowserModule,
+		IonicModule.forRoot(),
+		AppRoutingModule,
+		AngularFireModule.initializeApp(environment.firebase),
+		AngularFirestoreModule,
+		AngularFireAuthModule,
+		AngularFireFunctionsModule,
+		AngularFireMessagingModule,
+	],
+	providers: [Firebase, StatusBar, SplashScreen, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+	bootstrap: [AppComponent],
 })
 export class AppModule {}
