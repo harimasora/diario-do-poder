@@ -4,6 +4,10 @@
 </ng-container>
 
 <ng-template #login>
+  <ion-button color="secondary" (click)="auth.googleLogin()">
+    <ion-icon slot="start" name="glasses"></ion-icon>
+    Login Google
+  </ion-button>
   <ion-button color="medium" (click)="auth.anonymousLogin()">
     <ion-icon slot="start" name="glasses"></ion-icon>
     Login anônimo

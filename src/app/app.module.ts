@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { Firebase } from '@ionic-native/firebase/ngx';
+import { GooglePlus } from '@ionic-native/google-plus/ngx';
 
 import { environment } from './../environments/environment';
 import { AngularFireModule } from '@angular/fire';
@@ -21,20 +22,26 @@ import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
-	declarations: [AppComponent],
-	entryComponents: [],
-	imports: [
-		BrowserModule,
-		IonicModule.forRoot(),
-		AppRoutingModule,
-		AngularFireModule.initializeApp(environment.firebase),
-		AngularFirestoreModule,
-		AngularFireAuthModule,
-		AngularFireFunctionsModule,
-		AngularFireMessagingModule,
-		IonicStorageModule.forRoot(),
-	],
-	providers: [Firebase, StatusBar, SplashScreen, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
-	bootstrap: [AppComponent],
+  declarations: [AppComponent],
+  entryComponents: [],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireFunctionsModule,
+    AngularFireMessagingModule,
+    IonicStorageModule.forRoot(),
+  ],
+  providers: [
+    Firebase,
+    GooglePlus,
+    StatusBar,
+    SplashScreen,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
