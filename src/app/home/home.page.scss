@@ -1,0 +1,18 @@
+ion-segment-button {
+	--border-style: none;
+	--background-activated: #FFFFFF;
+	--background-checked: #FFFFFF;
+	--indicator-color: blue;
+	--color: #c7c7c7;
+	--color-checked: #3c3c3c;
+	--padding-start: 1em;
+	--padding-end: 1em;
+	min-height: 32px;
+	max-width: none !important;
+	font-size: 15px !important;
+}
+
+.segment-button-checked {
+	border-bottom: 2px solid;
+	border-radius: 0;
+}
