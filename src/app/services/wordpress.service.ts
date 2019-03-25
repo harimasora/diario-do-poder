@@ -9,6 +9,7 @@ import {
 } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { switchMap, mergeMap, map, tap } from 'rxjs/operators';
+import * as _ from 'lodash';
 
 const BASE_URL = 'https://diariodopoder.com.br/wp-json/wp/v2';
 const POSTS_URL = `${BASE_URL}/posts`;
@@ -22,14 +23,14 @@ export class WordpressService {
 
   constructor(private http: HttpClient) {
     this.getPosts()
-      .pipe(this.joinCategories())
+      .pipe(this.extractCategories())
       .subscribe(posts => {
         this.posts$.next(posts);
       });
   }
 
   getPosts() {
-    return this.http.get(POSTS_URL);
+    return this.http.get(`${POSTS_URL}?_embed`);
   }
 
   getPost(id: string) {
@@ -104,4 +105,16 @@ export class WordpressService {
       });
     };
   };
+
+  private extractCategories = () =>
+    map((posts: any) => {
+      return posts.map(post => {
+        const termArrays = post._embedded['wp:term'];
+        const categories = _.sortBy(
+          termArrays.find(arr => (arr[0].taxonomy = 'category')),
+          'id',
+        );
+        return { ...post, categories };
+      });
+    });
 }
