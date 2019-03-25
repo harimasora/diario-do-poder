@@ -17,12 +17,16 @@ export class NewsComponent implements OnInit {
 
   formatExcerpt(val) {
     const sanitizedVal = this.sanitizer.sanitize(SecurityContext.HTML, val);
-    return (
-      sanitizedVal
-        .split(' ')
-        .splice(0, 15)
-        .join(' ') + '...'
-    );
+    if (sanitizedVal) {
+      return (
+        sanitizedVal
+          .split(' ')
+          .splice(0, 15)
+          .join(' ') + '...'
+      );
+    } else {
+      return '';
+    }
   }
 
   formatRelativeTime(ISODate: string) {
