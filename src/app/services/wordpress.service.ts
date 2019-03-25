@@ -10,7 +10,6 @@ import {
 import { HttpClient } from '@angular/common/http';
 import { switchMap, mergeMap, map, tap } from 'rxjs/operators';
 import * as _ from 'lodash';
-import { post } from 'selenium-webdriver/http';
 
 const BASE_URL = 'https://diariodopoder.com.br/wp-json/wp/v2';
 const POSTS_URL = `${BASE_URL}/posts`;
@@ -23,25 +22,34 @@ export class WordpressService {
   posts$: BehaviorSubject<any[]> = new BehaviorSubject([]);
 
   constructor(private http: HttpClient) {
-    this.getPosts()
-      .pipe(this.extractCategories())
-      .subscribe(posts => {
-        this.posts$.next(posts);
-      });
+    this.getPosts().subscribe(posts => {
+      this.posts$.next(posts);
+    });
   }
 
   async refreshPosts() {
     const posts = this.posts$.getValue();
-    const latestPost = posts[0];
+    const firstPost = _.first(posts);
     const newPosts = await this.getPosts({
-      after: latestPost.date,
+      after: firstPost.date,
     }).toPromise();
     this.posts$.next([...newPosts, ...posts]);
   }
 
+  async getOlderPosts() {
+    const posts = this.posts$.getValue();
+    const lastPost = _.last(posts);
+    const olderPosts = await this.getPosts({
+      before: lastPost.date,
+    }).toPromise();
+    this.posts$.next([...posts, ...olderPosts]);
+  }
+
   getPosts(options?: any): Observable<any> {
     const queryParams = { ...options, _embed: 1 };
-    return this.http.get(POSTS_URL, { params: queryParams });
+    return this.http
+      .get(POSTS_URL, { params: queryParams })
+      .pipe(this.extractCategories());
   }
 
   getPost(id: string) {

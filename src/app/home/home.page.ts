@@ -15,4 +15,9 @@ export class HomePage implements OnInit {
     await this.wp.refreshPosts();
     event.target.complete();
   }
+
+  async loadOlderPosts(event) {
+    await this.wp.getOlderPosts();
+    event.target.complete();
+  }
 }
