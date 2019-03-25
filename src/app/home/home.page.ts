@@ -10,4 +10,9 @@ export class HomePage implements OnInit {
   constructor(public wp: WordpressService) {}
 
   ngOnInit() {}
+
+  async doRefresh(event) {
+    await this.wp.refreshPosts();
+    event.target.complete();
+  }
 }

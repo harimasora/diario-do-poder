@@ -10,6 +10,7 @@ import {
 import { HttpClient } from '@angular/common/http';
 import { switchMap, mergeMap, map, tap } from 'rxjs/operators';
 import * as _ from 'lodash';
+import { post } from 'selenium-webdriver/http';
 
 const BASE_URL = 'https://diariodopoder.com.br/wp-json/wp/v2';
 const POSTS_URL = `${BASE_URL}/posts`;
@@ -29,8 +30,18 @@ export class WordpressService {
       });
   }
 
-  getPosts() {
-    return this.http.get(`${POSTS_URL}?_embed`);
+  async refreshPosts() {
+    const posts = this.posts$.getValue();
+    const latestPost = posts[0];
+    const newPosts = await this.getPosts({
+      after: latestPost.date,
+    }).toPromise();
+    this.posts$.next([...newPosts, ...posts]);
+  }
+
+  getPosts(options?: any): Observable<any> {
+    const queryParams = { ...options, _embed: 1 };
+    return this.http.get(POSTS_URL, { params: queryParams });
   }
 
   getPost(id: string) {
