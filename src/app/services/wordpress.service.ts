@@ -70,7 +70,6 @@ export class WordpressService {
             const reads$ = [];
             let i = 0;
             for (const doc of collectionData) {
-              console.log('doc[docField]', doc[docField]);
               // Categories from post
               for (const id of doc[docField]) {
                 // Skip if doc field does not exist or is already in cache
@@ -89,11 +88,10 @@ export class WordpressService {
             return reads$.length ? combineLatest(reads$) : of([]);
           }),
           map(joins => {
-            console.log('joins', joins);
             return collectionData.map((v, i) => {
-              const categories = v[docField].map(id =>
-                joins.find(category => category.id === id),
-              );
+              const categories = v[docField]
+                .sort()
+                .map(id => joins.find(category => category.id === id));
               return { ...v, categories: categories || null };
             });
           }),

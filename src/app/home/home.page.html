@@ -1,6 +1,5 @@
 <app-header></app-header>
 
-<ion-content padding>
-  <app-login></app-login>
-  <ion-button [routerLink]="['/walkthrough']">Walkthrough</ion-button>
+<ion-content>
+  <app-news *ngFor="let post of wp.posts$ | async" [post]="post"></app-news>
 </ion-content>
