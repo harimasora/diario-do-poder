@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  Output,
+  EventEmitter,
+} from '@angular/core';
+import { IonSegment } from '@ionic/angular';
 
 @Component({
   selector: 'app-header',
@@ -6,9 +13,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  @ViewChild(IonSegment)
+  segment: IonSegment;
 
-  constructor() { }
+  @Output() segmentDidChange = new EventEmitter();
+
+  constructor() {}
 
   ngOnInit() {}
 
+  // On Segment change slide to the matching slide
+  onSegmentChange(ev) {
+    this.segmentDidChange.emit(ev.detail.value);
+  }
 }

@@ -1,12 +1,22 @@
-<app-header></app-header>
+<app-header (segmentDidChange)="onSegmentChange($event)"></app-header>
 
-<ion-content>
-  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
-  <app-news *ngFor="let post of wp.posts$ | async" [post]="post"></app-news>
-  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadOlderPosts($event)">
-    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Buscando mais notícias...">
-    </ion-infinite-scroll-content>
-  </ion-infinite-scroll>
-</ion-content>
+<ion-slides (ionSlideDidChange)="onSlideDidChange($event)">
+  <ion-slide class="scroll-slide">
+    <ion-content>
+      <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+      <app-news *ngFor="let post of wp.posts$ | async" [post]="post"></app-news>
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadOlderPosts($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Buscando mais notícias...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-content>
+  </ion-slide>
+  <ion-slide>
+    slide 2
+  </ion-slide>
+  <ion-slide>
+    slide 3
+  </ion-slide>
+</ion-slides>
