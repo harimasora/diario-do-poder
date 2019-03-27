@@ -21,29 +21,7 @@ const CATEGORIES_URL = `${BASE_URL}/categories`;
 export class WordpressService {
   posts$: BehaviorSubject<any[]> = new BehaviorSubject([]);
 
-  constructor(private http: HttpClient) {
-    this.getPosts().subscribe(posts => {
-      this.posts$.next(posts);
-    });
-  }
-
-  async refreshPosts() {
-    const posts = this.posts$.getValue();
-    const firstPost = _.first(posts);
-    const newPosts = await this.getPosts({
-      after: firstPost.date,
-    }).toPromise();
-    this.posts$.next([...newPosts, ...posts]);
-  }
-
-  async getOlderPosts() {
-    const posts = this.posts$.getValue();
-    const lastPost = _.last(posts);
-    const olderPosts = await this.getPosts({
-      before: lastPost.date,
-    }).toPromise();
-    this.posts$.next([...posts, ...olderPosts]);
-  }
+  constructor(private http: HttpClient) {}
 
   getPosts(options?: any): Observable<any> {
     const queryParams = { ...options, _embed: 1 };

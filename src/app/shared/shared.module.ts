@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { NewsComponent } from './news/news.component';
 import { RouterModule } from '@angular/router';
 import { ReaderComponent } from './reader/reader.component';
+import { NewsChComponent } from './news-ch/news-ch.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ReaderComponent } from './reader/reader.component';
     HeaderComponent,
     NewsComponent,
     ReaderComponent,
+    NewsChComponent,
   ],
   imports: [CommonModule, IonicModule, RouterModule],
   exports: [
@@ -23,6 +25,7 @@ import { ReaderComponent } from './reader/reader.component';
     HeaderComponent,
     NewsComponent,
     ReaderComponent,
+    NewsChComponent,
   ],
 })
 export class SharedModule {}
