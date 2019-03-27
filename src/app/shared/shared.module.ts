@@ -8,6 +8,7 @@ import { NewsComponent } from './news/news.component';
 import { RouterModule } from '@angular/router';
 import { ReaderComponent } from './reader/reader.component';
 import { NewsChComponent } from './news-ch/news-ch.component';
+import { NewsHumorComponent } from './news-humor/news-humor.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NewsChComponent } from './news-ch/news-ch.component';
     NewsComponent,
     ReaderComponent,
     NewsChComponent,
+    NewsHumorComponent,
   ],
   imports: [CommonModule, IonicModule, RouterModule],
   exports: [
@@ -26,6 +28,7 @@ import { NewsChComponent } from './news-ch/news-ch.component';
     NewsComponent,
     ReaderComponent,
     NewsChComponent,
+    NewsHumorComponent,
   ],
 })
 export class SharedModule {}

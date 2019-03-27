@@ -29,7 +29,32 @@
   </ion-slide>
 
   <ion-slide>
-    slide 3
+    VÍDEOS
+  </ion-slide>
+
+  <ion-slide>
+    MINHAS NOTÍCIAS
+  </ion-slide>
+
+  <ion-slide>
+    MAIS LIDAS
+  </ion-slide>
+
+  <ion-slide>
+    COMPARTILHE
+  </ion-slide>
+
+  <ion-slide>
+    <ion-content>
+      <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event, postsHumor$, filters.HUMOR)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+      <app-news-humor *ngFor="let post of postsHumor$ | async" [post]="post"></app-news-humor>
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadOlderPosts($event, postsHumor$, filters.HUMOR)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Buscando mais notícias...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-content>
   </ion-slide>
 
 </ion-slides>

@@ -19,10 +19,12 @@ export class HomePage implements OnInit {
 
   filters = {
     CLAUDIO_HUMBERTO: { categories: 12 },
+    HUMOR: { categories: 2424 },
   };
 
   posts$: BehaviorSubject<any[]> = new BehaviorSubject([]);
   postsCH$: BehaviorSubject<any[]> = new BehaviorSubject([]);
+  postsHumor$: BehaviorSubject<any[]> = new BehaviorSubject([]);
 
   constructor(public wp: WordpressService) {}
 
@@ -31,6 +33,9 @@ export class HomePage implements OnInit {
     this.wp
       .getPosts(this.filters.CLAUDIO_HUMBERTO)
       .subscribe(ps => this.postsCH$.next(ps));
+    this.wp
+      .getPosts(this.filters.HUMOR)
+      .subscribe(ps => this.postsHumor$.next(ps));
   }
 
   onSegmentChange(index) {
