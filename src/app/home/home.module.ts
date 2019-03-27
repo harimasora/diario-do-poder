@@ -7,12 +7,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { HomePage } from './home.page';
+import { ReaderComponent } from '../shared/reader/reader.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomePage,
-  },
+  { path: '', component: HomePage },
+  { path: 'reader', component: ReaderComponent },
 ];
 
 @NgModule({

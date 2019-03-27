@@ -1,0 +1,37 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" [text]="'Voltar'"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="more"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <div class="img-container">
+    <ion-img [src]="post.jetpack_featured_media_url"></ion-img>
+    <div class="overlay"></div>
+    <div class="category" [innerHTML]="post.categories[0].name"></div>
+  </div>
+  <div class="red-line"></div>
+  <div padding>
+    <h1 class="title" [innerHTML]="post.title.rendered" (click)="readPost()"></h1>
+    <p class="subtitle" [innerHTML]="post.acf.subtitulo"></p>
+    <div class="author">
+      <ion-thumbnail slot="start">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-thumbnail>
+      <div class="details-wrapper">
+        <p class="name">Redação</p>
+        <p class="published-at">{{formatAbsoluteDateTime(post.date)}} | Atualizado
+          {{formatAbsoluteTime(post.modified)}}</p>
+      </div>
+    </div>
+    <div class="separator"></div>
+    <p [innerHTML]="post.content.rendered"></p>
+  </div>
+</ion-content>
