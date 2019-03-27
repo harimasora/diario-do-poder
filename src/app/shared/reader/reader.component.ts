@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 
@@ -6,6 +6,7 @@ import * as moment from 'moment';
   selector: 'app-reader',
   templateUrl: './reader.component.html',
   styleUrls: ['./reader.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ReaderComponent implements OnInit {
   post;
