@@ -40,6 +40,11 @@ export class HomePage implements OnInit {
 
   onSegmentChange(index) {
     this.slides.slideTo(index);
+    this.scrollToSegmentButton(
+      `headerSegmentButton${index}`,
+      750,
+      'headerSegment',
+    );
   }
 
   async onSlideDidChange() {
@@ -71,5 +76,61 @@ export class HomePage implements OnInit {
       .toPromise();
     array$.next([...posts, ...olderPosts]);
     event.target.complete();
+  }
+
+  scrollToSegmentButton(elementID: string, duration: number = 750, container) {
+    const item = document.getElementById(elementID); // the element
+    if (item) {
+      const itemPos =
+        item.offsetLeft + item.offsetWidth / 2 - window.innerWidth / 2;
+      container = document.getElementById(container);
+      this.scrollTo(container, itemPos, duration);
+    } else {
+      console.error(
+        `Could not find element with the following ID: ${elementID}`,
+      );
+    }
+  }
+
+  private scrollTo(element, to: number, duration) {
+    const increment = 20,
+      that = this;
+    let start,
+      remaining,
+      currentTime = 0,
+      animateScroll;
+
+    start = element.scrollLeft;
+
+    remaining = to - start;
+
+    animateScroll = () => {
+      currentTime += increment;
+      const val = that.easeInOut(currentTime, start, remaining, duration);
+      element.scroll(val, 0);
+
+      if (currentTime < duration) {
+        setTimeout(animateScroll, increment);
+      }
+    };
+    animateScroll();
+  }
+
+  private easeInOut(
+    currentTime: number,
+    startTime: number,
+    remainingTime: number,
+    duration: number,
+  ) {
+    currentTime /= duration / 2;
+
+    if (currentTime < 1) {
+      return (remainingTime / 2) * currentTime * currentTime + startTime;
+    }
+
+    currentTime--;
+    return (
+      (-remainingTime / 2) * (currentTime * (currentTime - 2) - 1) + startTime
+    );
   }
 }

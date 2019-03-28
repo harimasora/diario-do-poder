@@ -14,26 +14,26 @@
   </ion-toolbar>
 
   <ion-toolbar>
-    <ion-segment scrollable (ionChange)="onSegmentChange($event)">
-      <ion-segment-button value="0" checked>
+    <ion-segment scrollable (ionChange)="onSegmentChange($event)" id="headerSegment">
+      <ion-segment-button value="0" id="headerSegmentButton0" checked>
         <ion-label>Últimas Notícias</ion-label>
       </ion-segment-button>
-      <ion-segment-button value="1">
+      <ion-segment-button value="1" id="headerSegmentButton1">
         <ion-label>Cláudio Humberto</ion-label>
       </ion-segment-button>
-      <ion-segment-button value="2">
+      <ion-segment-button value="2" id="headerSegmentButton2">
         <ion-label>Vídeos</ion-label>
       </ion-segment-button>
-      <ion-segment-button value="3">
+      <ion-segment-button value="3" id="headerSegmentButton3">
         <ion-label>Minhas Notícias</ion-label>
       </ion-segment-button>
-      <ion-segment-button value="4">
+      <ion-segment-button value="4" id="headerSegmentButton4">
         <ion-label>Mais Lidas</ion-label>
       </ion-segment-button>
-      <ion-segment-button value="5">
+      <ion-segment-button value="5" id="headerSegmentButton5">
         <ion-label>Compartilhe</ion-label>
       </ion-segment-button>
-      <ion-segment-button value="6">
+      <ion-segment-button value="6" id="headerSegmentButton6">
         <ion-label>Humor</ion-label>
       </ion-segment-button>
     </ion-segment>
