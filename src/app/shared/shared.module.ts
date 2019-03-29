@@ -10,6 +10,7 @@ import { ReaderComponent } from './reader/reader.component';
 import { NewsChComponent } from './news-ch/news-ch.component';
 import { NewsHumorComponent } from './news-humor/news-humor.component';
 import { BookmarkButtonComponent } from './bookmark-button/bookmark-button.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { BookmarkButtonComponent } from './bookmark-button/bookmark-button.compo
     NewsChComponent,
     NewsHumorComponent,
     BookmarkButtonComponent,
+    MenuComponent,
   ],
   imports: [CommonModule, IonicModule, RouterModule],
   exports: [
@@ -32,6 +34,7 @@ import { BookmarkButtonComponent } from './bookmark-button/bookmark-button.compo
     NewsChComponent,
     NewsHumorComponent,
     BookmarkButtonComponent,
+    MenuComponent,
   ],
 })
 export class SharedModule {}

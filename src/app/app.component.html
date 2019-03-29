@@ -1,38 +1,4 @@
 <ion-app>
-  <ion-menu side="start" type="overlay" #sideMenu>
-    <ion-header>
-      <ion-toolbar>
-        <ion-icon name="close" (click)="sideMenu.close()"></ion-icon>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content>
-      <ion-list>
-        <ion-item>
-          <ion-icon name="star" slot="start"></ion-icon>
-          <ion-label>
-            Menu Item
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="star" slot="start"></ion-icon>
-          <ion-label>
-            Menu Item
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="star" slot="start"></ion-icon>
-          <ion-label>
-            Menu Item
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="star" slot="start"></ion-icon>
-          <ion-label>
-            Menu Item
-          </ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
-  <ion-router-outlet main></ion-router-outlet>
+  <app-menu></app-menu>
+  <ion-router-outlet id="content1"></ion-router-outlet>
 </ion-app>

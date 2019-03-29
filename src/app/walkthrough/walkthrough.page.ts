@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { IonSlides } from '@ionic/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Storage } from '@ionic/storage';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-walkthrough',
@@ -8,12 +9,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./walkthrough.page.scss'],
 })
 export class WalkthroughPage implements OnInit {
-  constructor(private storage: Storage, private router: Router) {}
+  @ViewChild(IonSlides)
+  slides: IonSlides;
+
+  constructor(
+    private storage: Storage,
+    private router: Router,
+    private route: ActivatedRoute,
+  ) {}
 
   async finish() {
     await this.storage.set('walkthroughComplete', true);
-    this.router.navigateByUrl('home');
+    this.router.navigate(['/tabs/home']);
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      const navigation = this.router.getCurrentNavigation();
+      if (navigation && navigation.extras.state) {
+        const slideIndex = this.router.getCurrentNavigation().extras.state
+          .slideIndex;
+        this.slides.slideTo(slideIndex);
+      }
+    });
+  }
 }

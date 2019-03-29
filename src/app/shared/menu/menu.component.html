@@ -1,0 +1,39 @@
+<ion-menu side="start" type="overlay" contentId="content1" #sideMenu>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="sideMenu.close()">
+          <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item (click)="navigateToWalkthrough(2)">
+        <ion-icon name="star" slot="start"></ion-icon>
+        <ion-label>
+          Criar uma conta
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="star" slot="start"></ion-icon>
+        <ion-label>
+          Iniciar sessão
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="star" slot="start"></ion-icon>
+        <ion-label>
+          Configurações
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="star" slot="start"></ion-icon>
+        <ion-label>
+          Finalizar sessão
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
