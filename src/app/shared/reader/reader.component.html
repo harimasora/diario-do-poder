@@ -12,10 +12,14 @@
 </ion-header>
 
 <ion-content fullscreen>
-  <div class="img-container">
+  <div *ngIf="!post.featured_video" class="img-container">
     <ion-img [src]="post.jetpack_featured_media_url"></ion-img>
     <div class="overlay"></div>
     <div class="category" [innerHTML]="post.categories[0].name"></div>
+  </div>
+  <div *ngIf="post.featured_video" class="video-container">
+    <iframe class="video" type="text/html" [src]="embedUrl(post.featured_video)" frameborder="0" allowfullscreen>
+    </iframe>
   </div>
   <div class="red-line"></div>
   <div padding>

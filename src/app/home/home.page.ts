@@ -20,11 +20,13 @@ export class HomePage implements OnInit {
   filters = {
     CLAUDIO_HUMBERTO: { categories: 12 },
     HUMOR: { categories: 2424 },
+    VIDEO: { categories: '2222,8058,2429,3075,3076,2428' },
   };
 
   posts$: BehaviorSubject<any[]> = new BehaviorSubject([]);
   postsCH$: BehaviorSubject<any[]> = new BehaviorSubject([]);
   postsHumor$: BehaviorSubject<any[]> = new BehaviorSubject([]);
+  postsVideo$: BehaviorSubject<any[]> = new BehaviorSubject([]);
 
   constructor(public wp: WordpressService) {}
 
@@ -36,6 +38,9 @@ export class HomePage implements OnInit {
     this.wp
       .getPosts(this.filters.HUMOR)
       .subscribe(ps => this.postsHumor$.next(ps));
+    this.wp
+      .getPosts(this.filters.VIDEO)
+      .subscribe(ps => this.postsVideo$.next(ps));
   }
 
   onSegmentChange(index) {

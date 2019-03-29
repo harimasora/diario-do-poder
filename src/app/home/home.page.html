@@ -28,8 +28,17 @@
     </ion-content>
   </ion-slide>
 
-  <ion-slide>
-    VÍDEOS
+  <ion-slide class="scroll-slide">
+    <ion-content>
+      <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event, postsVideo$, filters.VIDEO)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+      <app-news *ngFor="let post of postsVideo$ | async" [post]="post"></app-news>
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadOlderPosts($event, postsVideo$, filters.VIDEO)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Buscando mais notícias...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-content>
   </ion-slide>
 
   <ion-slide>

@@ -26,7 +26,8 @@
 	font-weight: normal;
 }
 
-.img-container {
+.img-container,
+.video-container {
 	position: relative;
 	height: calc(100vw*9/16); // Aspect ration 16:9
 	overflow: hidden;
@@ -48,6 +49,11 @@
 	padding: 6pt 16pt;
 	background-color: var(--ion-color-primary);
 	color: #FFFFFF;
+}
+
+.video {
+	height: 100%;
+	width: 100%;
 }
 
 .author {
@@ -87,6 +93,11 @@
 }
 
 .content {
+	img {
+		display: block;
+		margin: auto;
+	}
+
 	video {
 		width: 100%;
 		height: auto;

@@ -1,3 +1,4 @@
+import { DomSanitizer } from '@angular/platform-browser';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
@@ -11,7 +12,11 @@ import * as moment from 'moment';
 export class ReaderComponent implements OnInit {
   post;
 
-  constructor(private route: ActivatedRoute, private router: Router) {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private sanitizer: DomSanitizer,
+  ) {
     this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.post = this.router.getCurrentNavigation().extras.state.post;
@@ -37,5 +42,11 @@ export class ReaderComponent implements OnInit {
     return moment(new Date(ISODate))
       .locale('pt-br')
       .format('hh:mm');
+  }
+
+  embedUrl(youtubeUrl: string) {
+    const videoCode = youtubeUrl.split('/').pop();
+    const embeddedUrl = `https://www.youtube.com/embed/${videoCode}`;
+    return this.sanitizer.bypassSecurityTrustResourceUrl(embeddedUrl);
   }
 }
