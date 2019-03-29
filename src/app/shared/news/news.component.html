@@ -1,5 +1,5 @@
 <div class="img-container" (click)="readPost()">
-  <ion-img [src]="post.jetpack_featured_media_url"></ion-img>
+  <ion-img [src]="post.jetpack_featured_media_url || 'assets/images/image-placeholder.png'"></ion-img>
   <div class="overlay"></div>
   <div class="category" [innerHTML]="post.categories[0].name"></div>
 </div>
