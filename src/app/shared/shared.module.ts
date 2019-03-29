@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { ReaderComponent } from './reader/reader.component';
 import { NewsChComponent } from './news-ch/news-ch.component';
 import { NewsHumorComponent } from './news-humor/news-humor.component';
+import { BookmarkButtonComponent } from './bookmark-button/bookmark-button.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { NewsHumorComponent } from './news-humor/news-humor.component';
     ReaderComponent,
     NewsChComponent,
     NewsHumorComponent,
+    BookmarkButtonComponent,
   ],
   imports: [CommonModule, IonicModule, RouterModule],
   exports: [
@@ -29,6 +31,7 @@ import { NewsHumorComponent } from './news-humor/news-humor.component';
     ReaderComponent,
     NewsChComponent,
     NewsHumorComponent,
+    BookmarkButtonComponent,
   ],
 })
 export class SharedModule {}
