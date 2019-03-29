@@ -1,7 +1,7 @@
 <div class="img-container">
   <ion-img [src]="post.jetpack_featured_media_url || 'assets/images/image-placeholder.png'"></ion-img>
   <div class="overlay" (click)="readPost()"></div>
-  <app-bookmark-button class="bookmark"></app-bookmark-button>
+  <app-bookmark-button class="bookmark" [post]="post"></app-bookmark-button>
   <div class="category" [innerHTML]="post.categories[0].name"></div>
 </div>
 <div class="red-line"></div>

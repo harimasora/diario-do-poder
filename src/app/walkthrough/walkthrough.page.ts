@@ -2,6 +2,7 @@ import { IonSlides } from '@ionic/angular';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-walkthrough',
@@ -16,6 +17,7 @@ export class WalkthroughPage implements OnInit {
     private storage: Storage,
     private router: Router,
     private route: ActivatedRoute,
+    public auth: AuthService,
   ) {}
 
   async finish() {

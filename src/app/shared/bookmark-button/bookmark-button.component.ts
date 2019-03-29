@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { BookmarkService } from './../../services/bookmark.service';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-bookmark-button',
@@ -6,11 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bookmark-button.component.scss'],
 })
 export class BookmarkButtonComponent implements OnInit {
-  constructor() {}
+  @Input()
+  post;
+
+  isBookmarked = false;
+
+  constructor(private bookService: BookmarkService) {}
 
   ngOnInit() {}
 
-  bookmark(postId) {
-    console.log('Bookmark click');
+  async bookmark() {
+    this.bookService.togglePostId(this.post.id);
   }
 }
