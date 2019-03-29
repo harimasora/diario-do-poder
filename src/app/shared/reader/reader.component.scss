@@ -31,6 +31,12 @@
 	position: relative;
 	height: calc(100vw*9/16); // Aspect ration 16:9
 	overflow: hidden;
+
+	ion-img {
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
 }
 
 .overlay {
