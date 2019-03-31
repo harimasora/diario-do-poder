@@ -1,9 +1,39 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>settings</ion-title>
+    <ion-title>Configurações</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-list>
+    <ion-radio-group>
+      <ion-list-header>
+        <ion-label>Notificações</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Não receber</ion-label>
+        <ion-radio slot="end" value="0" checked></ion-radio>
+      </ion-item>
 
+      <ion-item>
+        <ion-label>Notificações moderadas</ion-label>
+        <ion-radio slot="end" value="1"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Todas notificações</ion-label>
+        <ion-radio slot="end" value="2"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Sobre</ion-label>
+    </ion-list-header>
+    <ion-item detail>Gerenciar minhas notícias</ion-item>
+    <ion-item detail>Termos de uso</ion-item>
+    <ion-item detail>Política de privacidade</ion-item>
+    <ion-item>Avaliar o aplicativo</ion-item>
+  </ion-list>
 </ion-content>
