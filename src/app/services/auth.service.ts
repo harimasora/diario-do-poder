@@ -49,6 +49,14 @@ export class AuthService {
     });
   }
 
+  async emailSignIn(email, password) {
+    const credential = await this.afAuth.auth.signInWithEmailAndPassword(
+      email,
+      password,
+    );
+    return await this.updateUserData(credential.user);
+  }
+
   async signOut() {
     await this.afAuth.auth.signOut();
     return this.router.navigate(['/']);

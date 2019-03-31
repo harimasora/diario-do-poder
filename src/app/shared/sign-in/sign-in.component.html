@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="signInForm" (ngSubmit)="signIn()">
+    <p>Entre com suas informações abaixo para continuar.</p>
+
+    <ion-item>
+      <ion-label position="floating">Email*</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+      <div *ngIf="email.errors.required">
+        Email é obrigatório.
+      </div>
+      <div *ngIf="email.errors.email">
+        Formato inválido.
+      </div>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Senha*</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+      <div *ngIf="password.errors.required">
+        Senha é obrigatória.
+      </div>
+      <div *ngIf="password.errors.minlength">
+        Deve ter ao menos 3 caracteres.
+      </div>
+    </div>
+
+    <ion-button expand="full" color="primary" type="submit" [disabled]="signInForm.invalid">Entrar</ion-button>
+  </form>
+  <p>Ainda não tem conta? <a [routerLink]="['/walkthrough/signUp']">Cadastrar</a></p>
+</ion-content>

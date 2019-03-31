@@ -13,6 +13,7 @@ import { BookmarkButtonComponent } from './bookmark-button/bookmark-button.compo
 import { MenuComponent } from './menu/menu.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BookmarkButtonComponent,
     MenuComponent,
     SignUpComponent,
+    SignInComponent,
   ],
   imports: [
     CommonModule,
@@ -45,6 +47,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BookmarkButtonComponent,
     MenuComponent,
     SignUpComponent,
+    SignInComponent,
   ],
 })
 export class SharedModule {}
