@@ -1,3 +1,4 @@
+import { ReaderComponent } from './../shared/reader/reader.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -9,10 +10,8 @@ import { SearchPage } from './search.page';
 import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: SearchPage,
-  },
+  { path: '', component: SearchPage },
+  { path: 'reader', component: ReaderComponent },
 ];
 
 @NgModule({

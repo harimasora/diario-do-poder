@@ -42,6 +42,6 @@ export class NewsComponent implements OnInit {
         post: this.post,
       },
     };
-    this.router.navigate(['/tabs/home/reader'], navigationExtras);
+    this.router.navigate([this.router.url, 'reader'], navigationExtras);
   }
 }
