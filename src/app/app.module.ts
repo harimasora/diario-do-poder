@@ -22,6 +22,7 @@ import { AngularFireMessagingModule } from '@angular/fire/messaging';
 
 import { IonicStorageModule } from '@ionic/storage';
 import { SharedModule } from './shared/shared.module';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -44,6 +45,7 @@ import { SharedModule } from './shared/shared.module';
     GooglePlus,
     StatusBar,
     SplashScreen,
+    SocialSharing,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent],
