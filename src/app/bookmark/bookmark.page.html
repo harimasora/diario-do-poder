@@ -1,9 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>bookmark</ion-title>
+    <ion-title>Ver depois</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content>
+  <div *ngIf="this.bookmarkService.bookmarks | async as bookmarks">
+    <ng-container *ngIf="bookmarks.length ; else noContent">
+      <app-news *ngFor="let post of posts$ | async" [post]="post"></app-news>
+    </ng-container>
+  </div>
 </ion-content>
+
+<ng-template #noContent>
+  <p>Você precisa selecionar uma notícia para ler depois</p>
+  <p>Use o botão que está na parte superior de cada notícia para escolher o conteúdo que deseja ler depois</p>
+  <ion-button [routerLink]="['/tabs/home']">Ir para notícias</ion-button>
+</ng-template>

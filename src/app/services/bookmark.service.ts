@@ -17,9 +17,7 @@ export class BookmarkService {
     private db: DbService,
     private alertController: AlertController,
   ) {
-    this.auth.user$
-      .pipe(filter(u => u == null))
-      .subscribe(u => this.bookmarks.next(u.bookmarks));
+    this.auth.user$.subscribe(u => this.bookmarks.next(u.bookmarks));
   }
 
   async togglePostId(postId: number) {
