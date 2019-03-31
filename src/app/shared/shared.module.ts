@@ -11,6 +11,8 @@ import { NewsChComponent } from './news-ch/news-ch.component';
 import { NewsHumorComponent } from './news-humor/news-humor.component';
 import { BookmarkButtonComponent } from './bookmark-button/bookmark-button.component';
 import { MenuComponent } from './menu/menu.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,8 +25,15 @@ import { MenuComponent } from './menu/menu.component';
     NewsHumorComponent,
     BookmarkButtonComponent,
     MenuComponent,
+    SignUpComponent,
   ],
-  imports: [CommonModule, IonicModule, RouterModule],
+  imports: [
+    CommonModule,
+    IonicModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   exports: [
     ProfileComponent,
     LoginComponent,
@@ -35,6 +44,7 @@ import { MenuComponent } from './menu/menu.component';
     NewsHumorComponent,
     BookmarkButtonComponent,
     MenuComponent,
+    SignUpComponent,
   ],
 })
 export class SharedModule {}

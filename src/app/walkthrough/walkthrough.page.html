@@ -47,7 +47,7 @@
       <p>Fique por dentro da verdade sobre a política, com mais informação e conteúdo.</p>
       <ion-button>Facebook</ion-button>
       <ion-button (click)="auth.googleLogin()">Google</ion-button>
-      <ion-button>Endereço de email</ion-button>
+      <ion-button [routerLink]="['/walkthrough/signUp']">Endereço de email</ion-button>
       <ion-button (click)="finish()">Talvez depois. Acessar agora.</ion-button>
     </ion-content>
     <ion-footer>

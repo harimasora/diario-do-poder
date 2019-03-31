@@ -38,6 +38,17 @@ export class AuthService {
     return await this.updateUserData(credential.user);
   }
 
+  async emailSignUp(email, password, displayName?) {
+    const credential = await this.afAuth.auth.createUserWithEmailAndPassword(
+      email,
+      password,
+    );
+    return await this.updateUserData({
+      ...credential.user,
+      displayName: displayName || null,
+    });
+  }
+
   async signOut() {
     await this.afAuth.auth.signOut();
     return this.router.navigate(['/']);

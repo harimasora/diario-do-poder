@@ -1,3 +1,4 @@
+import { SignUpComponent } from './../shared/sign-up/sign-up.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -6,12 +7,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { WalkthroughPage } from './walkthrough.page';
+import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: WalkthroughPage
-  }
+  { path: '', component: WalkthroughPage },
+  { path: 'signUp', component: SignUpComponent },
 ];
 
 @NgModule({
@@ -19,8 +19,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    SharedModule,
+    RouterModule.forChild(routes),
   ],
-  declarations: [WalkthroughPage]
+  declarations: [WalkthroughPage],
 })
 export class WalkthroughPageModule {}
