@@ -16,6 +16,32 @@
           Criar uma conta
         </ion-label>
       </ion-item>
+      <ion-item [routerLink]="['/walkthrough/signIn']">
+        <ion-icon name="star" slot="start"></ion-icon>
+        <ion-label>
+          Iniciar sessão
+        </ion-label>
+      </ion-item>
+      <ion-item [routerLink]="['/tabs/settings']">
+        <ion-icon name="star" slot="start"></ion-icon>
+        <ion-label>
+          Configurações
+        </ion-label>
+      </ion-item>
+      <ion-item (click)="signOut()">
+        <ion-icon name="star" slot="start"></ion-icon>
+        <ion-label>
+          Finalizar sessão
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item (click)="navigateToWalkthrough(2)">
+        <ion-icon name="star" slot="start"></ion-icon>
+        <ion-label>
+          Criar uma conta
+        </ion-label>
+      </ion-item>
       <ion-item>
         <ion-icon name="star" slot="start"></ion-icon>
         <ion-label>

@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { IonMenu } from '@ionic/angular';
@@ -11,17 +12,22 @@ export class MenuComponent implements OnInit {
   @ViewChild(IonMenu)
   menu: IonMenu;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private auth: AuthService) {}
 
   ngOnInit() {}
 
   navigateToWalkthrough(slideId?: number) {
     const navigationExtras: NavigationExtras = {
-      state: {
+      queryParams: {
         slideIndex: slideId || 0,
       },
     };
     this.router.navigate(['/walkthrough'], navigationExtras);
     this.menu.close();
+  }
+
+  async signOut() {
+    await this.auth.signOut();
+    this.navigateToWalkthrough(0);
   }
 }

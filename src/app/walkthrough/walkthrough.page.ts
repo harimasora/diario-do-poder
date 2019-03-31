@@ -22,15 +22,13 @@ export class WalkthroughPage implements OnInit {
 
   async finish() {
     await this.storage.set('walkthroughComplete', true);
-    this.router.navigate(['/tabs/home']);
+    this.router.navigate(['/tabs/home'], { replaceUrl: true });
   }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      const navigation = this.router.getCurrentNavigation();
-      if (navigation && navigation.extras.state) {
-        const slideIndex = this.router.getCurrentNavigation().extras.state
-          .slideIndex;
+      const { slideIndex } = params;
+      if (slideIndex) {
         this.slides.slideTo(slideIndex);
       }
     });

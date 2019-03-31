@@ -8,7 +8,7 @@
     <ion-footer>
       <ion-toolbar>
         <ion-buttons slot="start">
-          <ion-button (click)="finish()">Pular</ion-button>
+          <ion-button (click)="finish()" routerDirection="root">Pular</ion-button>
         </ion-buttons>
         <ion-title></ion-title>
         <ion-buttons slot="end">
@@ -31,7 +31,7 @@
     <ion-footer>
       <ion-toolbar>
         <ion-buttons slot="start">
-          <ion-button (click)="finish()">Pular</ion-button>
+          <ion-button (click)="finish()" routerDirection="root">Pular</ion-button>
         </ion-buttons>
         <ion-title></ion-title>
         <ion-buttons slot="end">
@@ -48,7 +48,7 @@
       <ion-button>Facebook</ion-button>
       <ion-button (click)="auth.googleLogin()">Google</ion-button>
       <ion-button [routerLink]="['/walkthrough/signUp']">Endereço de email</ion-button>
-      <ion-button (click)="finish()">Talvez depois. Acessar agora.</ion-button>
+      <ion-button (click)="finish()" routerDirection="root">Talvez depois. Acessar agora.</ion-button>
     </ion-content>
     <ion-footer>
       <ion-toolbar>
