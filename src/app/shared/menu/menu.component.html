@@ -16,13 +16,13 @@
           Criar uma conta
         </ion-label>
       </ion-item>
-      <ion-item [routerLink]="['/walkthrough/signIn']">
+      <ion-item [routerLink]="['/walkthrough/signIn']" (click)="sideMenu.close()">
         <ion-icon name="star" slot="start"></ion-icon>
         <ion-label>
           Iniciar sessão
         </ion-label>
       </ion-item>
-      <ion-item [routerLink]="['/tabs/settings']">
+      <ion-item [routerLink]="['/tabs/settings']" (click)="sideMenu.close()">
         <ion-icon name="star" slot="start"></ion-icon>
         <ion-label>
           Configurações
@@ -36,28 +36,57 @@
       </ion-item>
     </ion-list>
     <ion-list>
-      <ion-item (click)="navigateToWalkthrough(2)">
-        <ion-icon name="star" slot="start"></ion-icon>
+      <ion-list-header>
+        <ion-label>Editoriais</ion-label>
+      </ion-list-header>
+      <ion-item (click)="navigateToEditorial('claudio')">
         <ion-label>
-          Criar uma conta
+          Cláudio Humberto
+        </ion-label>
+      </ion-item>
+      <ion-item (click)="navigateToEditorial('politica')">
+        <ion-label>
+          Política
+        </ion-label>
+      </ion-item>
+      <ion-item (click)="navigateToEditorial('justica')">
+        <ion-label>
+          Justiça
+        </ion-label>
+      </ion-item>
+      <ion-item (click)="navigateToEditorial('brasil')">
+        <ion-label>
+          Brasil e Regiões
+        </ion-label>
+      </ion-item>
+      <ion-item (click)="navigateToEditorial('exteriores')">
+        <ion-label>
+          Exteriores
+        </ion-label>
+      </ion-item>
+      <ion-item (click)="navigateToEditorial('dinheiro')">
+        <ion-label>
+          Dinheiro
+        </ion-label>
+      </ion-item>
+      <ion-item (click)="navigateToEditorial('opiniao')">
+        <ion-label>
+          Opinião
+        </ion-label>
+      </ion-item>
+      <ion-item (click)="navigateToEditorial('especiais')">
+        <ion-label>
+          Especiais
+        </ion-label>
+      </ion-item>
+      <ion-item (click)="navigateToEditorial('mulheres')">
+        <ion-label>
+          Mulheres no Poder
         </ion-label>
       </ion-item>
       <ion-item>
-        <ion-icon name="star" slot="start"></ion-icon>
         <ion-label>
-          Iniciar sessão
-        </ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-icon name="star" slot="start"></ion-icon>
-        <ion-label>
-          Configurações
-        </ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-icon name="star" slot="start"></ion-icon>
-        <ion-label>
-          Finalizar sessão
+          Outros Editoriais
         </ion-label>
       </ion-item>
     </ion-list>

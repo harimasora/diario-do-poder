@@ -1,6 +1,11 @@
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
+import {
+  NavigationExtras,
+  Router,
+  ActivatedRoute,
+  Params,
+} from '@angular/router';
 import { IonMenu } from '@ionic/angular';
 
 @Component({
@@ -12,7 +17,11 @@ export class MenuComponent implements OnInit {
   @ViewChild(IonMenu)
   menu: IonMenu;
 
-  constructor(private router: Router, private auth: AuthService) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private auth: AuthService,
+  ) {}
 
   ngOnInit() {}
 
@@ -29,5 +38,10 @@ export class MenuComponent implements OnInit {
   async signOut() {
     await this.auth.signOut();
     this.navigateToWalkthrough(0);
+  }
+
+  navigateToEditorial(type) {
+    this.router.navigate(['/tabs/editorial', type]);
+    this.menu.close();
   }
 }

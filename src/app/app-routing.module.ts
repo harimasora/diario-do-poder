@@ -12,6 +12,7 @@ const routes: Routes = [
     path: 'walkthrough',
     loadChildren: './walkthrough/walkthrough.module#WalkthroughPageModule',
   },
+  { path: 'editorial', loadChildren: './editorial/editorial.module#EditorialPageModule' },
 ];
 @NgModule({
   imports: [

@@ -44,6 +44,15 @@ const routes: Routes = [
         ],
       },
       {
+        path: 'editorial',
+        children: [
+          {
+            path: '',
+            loadChildren: '../editorial/editorial.module#EditorialPageModule',
+          },
+        ],
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full',
