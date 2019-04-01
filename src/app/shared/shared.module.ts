@@ -15,6 +15,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ShareButtonComponent } from './share-button/share-button.component';
+import { CategoryPickerComponent } from './category-picker/category-picker.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ShareButtonComponent } from './share-button/share-button.component';
     SignUpComponent,
     SignInComponent,
     ShareButtonComponent,
+    CategoryPickerComponent,
   ],
   imports: [
     CommonModule,
@@ -51,6 +53,7 @@ import { ShareButtonComponent } from './share-button/share-button.component';
     SignUpComponent,
     SignInComponent,
     ShareButtonComponent,
+    CategoryPickerComponent,
   ],
 })
 export class SharedModule {}
