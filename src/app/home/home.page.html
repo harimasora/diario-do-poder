@@ -41,8 +41,20 @@
     </ion-content>
   </ion-slide>
 
-  <ion-slide>
-    MINHAS NOTÍCIAS
+  <ion-slide class="scroll-slide">
+    <ion-content *ngIf="(filtersFavorites$ | async)?.hasFavorites; else addFilters;">
+      <ion-refresher slot="fixed" (ionRefresh)="doFavoriteRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+      <app-news *ngFor="let post of postsFavoriteMerged$ | async" [post]="post"></app-news>
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadFavoriteOlderPosts($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Buscando mais notícias...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-content>
+    <ng-template #addFilters>
+      SEM FILTROS
+    </ng-template>
   </ion-slide>
 
   <ion-slide>

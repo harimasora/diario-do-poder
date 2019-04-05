@@ -1,9 +1,12 @@
+import { AuthService } from './../services/auth.service';
 import { HeaderComponent } from './../shared/header/header.component';
 import { WordpressService } from './../services/wordpress.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, of, combineLatest, Observable } from 'rxjs';
 import * as _ from 'lodash';
+import { switchMap, map, tap } from 'rxjs/operators';
+import { request } from 'http';
 
 @Component({
   selector: 'app-home',
@@ -28,7 +31,16 @@ export class HomePage implements OnInit {
   postsHumor$: BehaviorSubject<any[]> = new BehaviorSubject([]);
   postsVideo$: BehaviorSubject<any[]> = new BehaviorSubject([]);
 
-  constructor(public wp: WordpressService) {}
+  filtersFavorites$: BehaviorSubject<any> = new BehaviorSubject({
+    categories: [],
+    tags: [],
+    hasFavorites: false,
+  });
+  postsFavoriteMerged$: BehaviorSubject<any[]> = new BehaviorSubject([]);
+  postsFavoriteCategories$: BehaviorSubject<any[]> = new BehaviorSubject([]);
+  postsFavoriteTags$: BehaviorSubject<any[]> = new BehaviorSubject([]);
+
+  constructor(public wp: WordpressService, private auth: AuthService) {}
 
   ngOnInit() {
     this.wp.getPosts().subscribe(ps => this.posts$.next(ps));
@@ -41,6 +53,132 @@ export class HomePage implements OnInit {
     this.wp
       .getPosts(this.filters.VIDEO)
       .subscribe(ps => this.postsVideo$.next(ps));
+
+    // FAVORITE CATEGORIES AND TAGS
+    // TODO: Refactor to it's own component
+
+    this.auth.user$.subscribe(user => {
+      if (!user) {
+        return of(null);
+      } else {
+        const categories = user.categories || [];
+        const tags = user.tags || [];
+        const hasFavorites = categories.length || tags.length;
+        this.filtersFavorites$.next({ categories, tags, hasFavorites });
+      }
+    });
+
+    this.filtersFavorites$
+      .pipe(
+        switchMap(userFilters => {
+          const userCategories = userFilters.categories;
+          const userTags = userFilters.tags;
+          const requests = [];
+          if (userCategories.length) {
+            requests.push(
+              this.wp.getPosts({ categories: userCategories.join(',') }),
+            );
+          } else {
+            requests.push(of([]));
+          }
+          if (userTags.length) {
+            requests.push(this.wp.getPosts({ tags: userTags.join(',') }));
+          } else {
+            requests.push(of([]));
+          }
+          return combineLatest(requests);
+        }),
+      )
+      .subscribe(responses => {
+        this.postsFavoriteCategories$.next(responses[0]);
+        this.postsFavoriteTags$.next(responses[1]);
+      });
+
+    combineLatest(
+      this.postsFavoriteCategories$.asObservable(),
+      this.postsFavoriteTags$.asObservable(),
+    ).subscribe(arrays => {
+      this.postsFavoriteMerged$.next(this.mergePosts(arrays));
+    });
+  }
+
+  mergePosts(arrays: any[][]): any[] {
+    let posts = _.flatten(arrays);
+    posts = _.uniqBy(posts, 'id');
+    posts = _.orderBy(posts, 'date', 'desc');
+    return posts;
+  }
+
+  async doFavoriteRefresh(event) {
+    const currentCategories = this.postsFavoriteCategories$.getValue();
+    const currentTags = this.postsFavoriteTags$.getValue();
+    const categoriesIds = this.filtersFavorites$
+      .getValue()
+      .categories.join(',');
+    const tagsIds = this.filtersFavorites$.getValue().tags.join(',');
+
+    if (categoriesIds.length) {
+      const categoryOptions = {};
+      categoryOptions['categories'] = categoriesIds;
+      if (currentCategories.length) {
+        categoryOptions['after'] = _.first(currentCategories).date;
+      }
+      const newCategories: any[] = await this.wp
+        .getPosts(categoryOptions)
+        .toPromise();
+      this.postsFavoriteCategories$.next([
+        ...newCategories,
+        ...currentCategories,
+      ]);
+    }
+
+    if (tagsIds.length) {
+      const tagOptions = {};
+      tagOptions['tags'] = tagsIds;
+      if (currentTags.length) {
+        tagOptions['after'] = _.first(currentTags).date;
+      }
+      const newTags: any[] = await this.wp.getPosts(tagOptions).toPromise();
+      this.postsFavoriteTags$.next([...newTags, ...currentTags]);
+    }
+
+    event.target.complete();
+  }
+
+  async loadFavoriteOlderPosts(event) {
+    const currentCategories = this.postsFavoriteCategories$.getValue();
+    const currentTags = this.postsFavoriteTags$.getValue();
+    const categoriesIds = this.filtersFavorites$
+      .getValue()
+      .categories.join(',');
+    const tagsIds = this.filtersFavorites$.getValue().tags.join(',');
+
+    if (categoriesIds.length) {
+      const categoryOptions = {};
+      categoryOptions['categories'] = categoriesIds;
+      if (currentCategories.length) {
+        categoryOptions['before'] = _.last(currentCategories).date;
+      }
+      const olderCategories: any[] = await this.wp
+        .getPosts(categoryOptions)
+        .toPromise();
+      this.postsFavoriteCategories$.next([
+        ...currentCategories,
+        ...olderCategories,
+      ]);
+    }
+
+    if (tagsIds.length) {
+      const tagOptions = {};
+      tagOptions['tags'] = tagsIds;
+      if (currentTags.length) {
+        tagOptions['before'] = _.last(currentTags).date;
+      }
+      const olderTags: any[] = await this.wp.getPosts(tagOptions).toPromise();
+      this.postsFavoriteTags$.next([...currentTags, ...olderTags]);
+    }
+
+    event.target.complete();
   }
 
   onSegmentChange(index) {
