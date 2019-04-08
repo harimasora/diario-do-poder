@@ -1,5 +1,5 @@
 import { IonSlides } from '@ionic/angular';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../services/auth.service';
@@ -8,6 +8,7 @@ import { AuthService } from '../services/auth.service';
   selector: 'app-walkthrough',
   templateUrl: './walkthrough.page.html',
   styleUrls: ['./walkthrough.page.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class WalkthroughPage implements OnInit {
   @ViewChild(IonSlides)

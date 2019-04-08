@@ -3,11 +3,19 @@ ion-slide {
 	width: 100vw;
 	flex-direction: column;
 	text-align: justify;
+
+	ion-content {
+		--background: transparent;
+	}
 }
 
 ion-slides {
-	height: 100vh;
+	height: 90vh;
 	width: 100vw;
+	background-image: url('/assets/images/onboarding-bg.png');
+	background-size: cover;
+	border-radius: 0 0 8px 8px;
+	overflow: visible !important;
 }
 
 ion-img {
@@ -23,4 +31,28 @@ h1 {
 
 .notification-range {
 	width: 100%;
+}
+
+.footer {
+	--min-height: 10vh;
+
+	ion-toolbar {
+		--border-width: 0 !important;
+	}
+
+	z-index: 0;
+}
+
+.swiper-pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30% !important;
+	margin: auto;
+	position: fixed;
+	height: 10vh;
+	padding: 4px;
+	right: 0;
+	bottom: 0 !important;
+	left: 0;
 }

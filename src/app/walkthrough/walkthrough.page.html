@@ -1,65 +1,48 @@
-<ion-slides pager="true" #slides>
-  <ion-slide>
-    <ion-content padding>
-      <h1>Poder, política e bastidores</h1>
-      <p>Mantenha-se informado sobre as principais notícias políticas.</p>
-      <ion-button (click)="slides.slideNext()">Continuar</ion-button>
-    </ion-content>
-    <ion-footer>
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-button (click)="finish()" routerDirection="root">Pular</ion-button>
-        </ion-buttons>
-        <ion-title></ion-title>
-        <ion-buttons slot="end">
-          <ion-button [routerLink]="['/walkthrough/signIn']">Login</ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-footer>
-  </ion-slide>
+<ion-content>
+  <ion-slides pager="true" #slides>
 
-  <ion-slide class="step-two">
-    <ion-content padding>
-      <h1>Notificações</h1>
-      <p>Com as notificações ativadas você sempre estará atualizado com as principais notícias.</p>
-      <ion-range class="notification-range" min="0" max="2" step="1" snaps="true" color="secondary">
-        <ion-label slot="start">Nenhuma</ion-label>
-        <ion-label slot="end">Sempre</ion-label>
-      </ion-range>
-      <ion-button (click)="slides.slideNext()">Habilitar depois</ion-button>
-    </ion-content>
-    <ion-footer>
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-button (click)="finish()" routerDirection="root">Pular</ion-button>
-        </ion-buttons>
-        <ion-title></ion-title>
-        <ion-buttons slot="end">
-          <ion-button [routerLink]="['/walkthrough/signIn']">Login</ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-footer>
-  </ion-slide>
+    <ion-slide class="step-one">
+      <ion-content padding>
+        <h1>Poder, política e bastidores</h1>
+        <p>Mantenha-se informado sobre as principais notícias políticas.</p>
+        <ion-button (click)="slides.slideNext()">Continuar</ion-button>
+      </ion-content>
+    </ion-slide>
 
-  <ion-slide class="step-three">
-    <ion-content padding>
-      <h1>Cadastre-se</h1>
-      <p>Fique por dentro da verdade sobre a política, com mais informação e conteúdo.</p>
-      <ion-button>Facebook</ion-button>
-      <ion-button (click)="auth.googleLogin()">Google</ion-button>
-      <ion-button [routerLink]="['/walkthrough/signUp']">Endereço de email</ion-button>
-      <ion-button (click)="finish()" routerDirection="root">Talvez depois. Acessar agora.</ion-button>
-    </ion-content>
-    <ion-footer>
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-button (click)="slides.slidePrev()">Voltar</ion-button>
-        </ion-buttons>
-        <ion-title></ion-title>
-        <ion-buttons slot="end">
-          <ion-button [routerLink]="['/walkthrough/signIn']">Login</ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-footer>
-  </ion-slide>
-</ion-slides>
+    <ion-slide class="step-two">
+      <ion-content padding>
+        <h1>Notificações</h1>
+        <p>Com as notificações ativadas você sempre estará atualizado com as principais notícias.</p>
+        <ion-range class="notification-range" min="0" max="2" step="1" snaps="true" color="secondary">
+          <ion-label slot="start">Nenhuma</ion-label>
+          <ion-label slot="end">Sempre</ion-label>
+        </ion-range>
+        <ion-button (click)="slides.slideNext()">Habilitar depois</ion-button>
+      </ion-content>
+    </ion-slide>
+
+    <ion-slide class="step-three">
+      <ion-content padding>
+        <h1>Cadastre-se</h1>
+        <p>Fique por dentro da verdade sobre a política, com mais informação e conteúdo.</p>
+        <ion-button>Facebook</ion-button>
+        <ion-button (click)="auth.googleLogin()">Google</ion-button>
+        <ion-button [routerLink]="['/walkthrough/signUp']">Endereço de email</ion-button>
+        <ion-button (click)="finish()" routerDirection="root">Talvez depois. Acessar agora.</ion-button>
+      </ion-content>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="footer">
+    <ion-buttons slot="start">
+      <ion-button (click)="finish()" routerDirection="root">Pular</ion-button>
+    </ion-buttons>
+    <ion-title>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/walkthrough/signIn']">Login</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
