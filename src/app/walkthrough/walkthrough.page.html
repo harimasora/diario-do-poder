@@ -2,11 +2,15 @@
   <ion-slides pager="true" #slides>
 
     <ion-slide class="step-one">
-      <ion-content padding>
-        <h1>Poder, política e bastidores</h1>
-        <p>Mantenha-se informado sobre as principais notícias políticas.</p>
-        <ion-button (click)="slides.slideNext()">Continuar</ion-button>
-      </ion-content>
+      <div class="logo-white"></div>
+      <div>
+        <h1 class="headline">Poder, política e bastidores</h1>
+        <p class="subtitle">Mantenha-se informado sobre as principais notícias políticas.</p>
+      </div>
+      <ion-button color="light" fill="outline" (click)="slides.slideNext()" class="button-next">Continuar
+        <ion-icon slot="end" name="arrow-round-forward"></ion-icon>
+      </ion-button>
+
     </ion-slide>
 
     <ion-slide class="step-two">
