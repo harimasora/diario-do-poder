@@ -1,0 +1,61 @@
+.transparent {
+	--background: transparent;
+}
+
+.page-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	background-image: url('/assets/images/onboarding-bg.png');
+	background-size: cover;
+	border-radius: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.logo-white {
+	width: 100%;
+	height: 42px;
+	background-image: url(/assets/images/logo-white.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.subtitle {
+	color: white;
+	font-weight: lighter;
+	padding: 0;
+	margin: 13px 40px 0;
+	text-align: center;
+}
+
+.form {
+	margin: 0 5%;
+}
+
+.item-transparent {
+	--background: transparent;
+	--color: var(--ion-color-light);
+}
+
+.alert {
+	color: var(--ion-color-light);
+}
+
+.button-submit {
+	width: 100%;
+	height: 50px;
+	margin-top: 2.5em;
+	font-weight: 600;
+	--border-radius: 5px;
+}
+
+.register-later {
+	color: var(--ion-color-light);
+	text-decoration: underline;
+	text-align: center
+}
