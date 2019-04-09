@@ -1,7 +1,7 @@
 <ion-content>
   <ion-slides pager="true" #slides>
 
-    <ion-slide class="step-one">
+    <ion-slide>
       <div class="logo-white"></div>
       <div>
         <h1 class="headline">Poder, política e bastidores</h1>
@@ -13,19 +13,17 @@
 
     </ion-slide>
 
-    <ion-slide class="step-two">
-      <ion-content padding>
-        <h1>Notificações</h1>
-        <p>Com as notificações ativadas você sempre estará atualizado com as principais notícias.</p>
-        <ion-range class="notification-range" min="0" max="2" step="1" snaps="true" color="secondary">
-          <ion-label slot="start">Nenhuma</ion-label>
-          <ion-label slot="end">Sempre</ion-label>
-        </ion-range>
-        <ion-button (click)="slides.slideNext()">Habilitar depois</ion-button>
-      </ion-content>
+    <ion-slide>
+      <div class="logo-white"></div>
+      <div>
+        <h1 class="headline">Notificações</h1>
+        <p class="subtitle">Com as notificações ativadas você sempre estará atualizado com as principais notícias.</p>
+      </div>
+      <ion-button color="light" fill="outline" (click)="slides.slideNext()" class="button-next">Habilitar depois
+      </ion-button>
     </ion-slide>
 
-    <ion-slide class="step-three">
+    <ion-slide>
       <ion-content padding>
         <h1>Cadastre-se</h1>
         <p>Fique por dentro da verdade sobre a política, com mais informação e conteúdo.</p>
