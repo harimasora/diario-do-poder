@@ -1,33 +1,16 @@
-ion-slide {
-	height: 100vh;
+.walkthrough-slide {
 	width: 100vw;
 	flex-direction: column;
 	justify-content: space-evenly !important;
-	text-align: justify;
-
-	ion-content {
-		--background: transparent;
-	}
 }
 
-ion-slides {
+.walkthrough-slides {
 	height: 90vh;
 	width: 100vw;
 	background-image: url('/assets/images/onboarding-bg.png');
 	background-size: cover;
 	border-radius: 0 0 8px 8px;
 	overflow: visible !important;
-}
-
-ion-img {
-	max-width: 50vw;
-	max-height: 50vh;
-	overflow: hidden;
-}
-
-p,
-h1 {
-	padding: 1em;
 }
 
 .notification-range {
@@ -87,4 +70,26 @@ h1 {
 	width: calc(100vw - 80px);
 	height: 50px;
 	font-weight: 600;
+}
+
+.buttons-wrapper {
+	margin: 0 40px;
+}
+
+.social-buttons {
+	display: flex;
+}
+
+.google,
+.facebook {
+	flex: 1;
+	--border-radius: 5px;
+	--border-width: 0.8pt;
+	height: 50px;
+	font-weight: 600;
+}
+
+.register-later {
+	color: var(--ion-color-light);
+	text-decoration: underline;
 }

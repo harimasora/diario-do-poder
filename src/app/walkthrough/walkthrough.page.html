@@ -1,7 +1,7 @@
 <ion-content>
-  <ion-slides pager="true" #slides>
+  <ion-slides pager="true" class="walkthrough-slides" #slides>
 
-    <ion-slide>
+    <ion-slide class="walkthrough-slide">
       <div class="logo-white"></div>
       <div>
         <h1 class="headline">Poder, política e bastidores</h1>
@@ -13,7 +13,7 @@
 
     </ion-slide>
 
-    <ion-slide>
+    <ion-slide class="walkthrough-slide">
       <div class="logo-white"></div>
       <div>
         <h1 class="headline">Notificações</h1>
@@ -23,15 +23,26 @@
       </ion-button>
     </ion-slide>
 
-    <ion-slide>
-      <ion-content padding>
-        <h1>Cadastre-se</h1>
-        <p>Fique por dentro da verdade sobre a política, com mais informação e conteúdo.</p>
-        <ion-button>Facebook</ion-button>
-        <ion-button (click)="auth.googleLogin()">Google</ion-button>
-        <ion-button [routerLink]="['/walkthrough/signUp']">Endereço de email</ion-button>
-        <ion-button (click)="finish()" routerDirection="root">Talvez depois. Acessar agora.</ion-button>
-      </ion-content>
+    <ion-slide class="walkthrough-slide">
+      <div class="logo-white"></div>
+      <div>
+        <h1 class="headline">Cadastre-se</h1>
+        <p class="subtitle">Fique por dentro da verdade sobre a política, com mais informação e conteúdo.</p>
+      </div>
+      <div class="buttons-wrapper">
+        <div class="social-buttons">
+          <ion-button color="light" fill="outline" (click)="slides.slideNext()" class="facebook">
+            <ion-icon slot="end" name="logo-facebook"></ion-icon>
+          </ion-button>
+          <ion-button color="light" fill="outline" (click)="auth.googleLogin()" class="google">
+            <ion-icon slot="end" name="logo-googleplus"></ion-icon>
+          </ion-button>
+        </div>
+        <ion-button color="light" fill="outline" [routerLink]="['/walkthrough/signUp']" class="button-next">Endereço de
+          email</ion-button>
+        <a class="register-later" color="light" (click)="finish()" routerDirection="root">Talvez depois. Acessar
+          agora.</a>
+      </div>
     </ion-slide>
 
   </ion-slides>
