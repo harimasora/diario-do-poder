@@ -1,14 +1,17 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
+<ion-header class="header">
+  <div class="page-bg">
+      <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-back-button color="light"></ion-back-button>
+          </ion-buttons>
+        </ion-toolbar>
+        <div class="logo-white"></div>
+  </div>
 </ion-header>
 
-<ion-content padding>
-  <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
-    <p>Informe os dados para completar seu cadastro</p>
+<ion-content class="content">
+  <form [formGroup]="signUpForm" (ngSubmit)="signUp()" class="form">
+    <p class="text">Informe os dados para completar seu cadastro.</p>
     <ion-item>
       <ion-label position="floating">Nome*</ion-label>
       <ion-input formControlName="name"></ion-input>
@@ -69,7 +72,7 @@
       </div>
     </div>
 
-    <ion-item lines="none">
+    <ion-item lines="none" class="item-toggle">
       <ion-label text-wrap>Estou de acordo com os Termos e Condições</ion-label>
       <ion-toggle slot="start" formControlName="hasAgreed"></ion-toggle>
     </ion-item>
