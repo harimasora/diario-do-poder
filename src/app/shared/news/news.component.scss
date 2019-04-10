@@ -7,13 +7,16 @@
 .title {
 	margin-top: 0;
 	color: #5C5C5C;
-	font-size: 16pt;
+	font-size: 14pt;
 	font-weight: bold;
+	letter-spacing: 0.27pt;
+	line-height: 18pt;
 }
 
 .subtitle,
 .time {
-	font-size: 13pt;
+	font-size: 11pt;
+	letter-spacing: 0.1pt;
 }
 
 .subtitle {
@@ -51,9 +54,10 @@
 	position: absolute;
 	left: 8pt;
 	bottom: 8pt;
-	padding: 6pt 16pt;
+	padding: 4pt 12pt;
 	background-color: var(--ion-color-primary);
 	color: #FFFFFF;
+	font-size: 11pt;
 }
 
 .buttons {
