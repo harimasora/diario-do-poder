@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>sign-out-on</title>
+    <desc>Created with Sketch.</desc>
+    <g id="sign-out-on" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M2,1.5 L7.99999992,1.5 C9.65685434,1.5 11,2.94263803 11,4.72222223 L11,27.2777777 C11,29.0573621 9.65685434,30.5 7.99999992,30.5 L2,30.5" id="Path" stroke="#CC2A2B" stroke-width="3" transform="translate(6.500000, 16.000000) scale(-1, 1) translate(-6.500000, -16.000000) "></path>
+        <polyline id="Path" stroke="#CC2A2B" stroke-width="3" points="20 24.2857146 29 16.0000003 20 7.714286"></polyline>
+        <path d="M29,16.0000003 L9,16.0000003" id="Path" stroke="#CC2A2B" stroke-width="3"></path>
+    </g>
+</svg>

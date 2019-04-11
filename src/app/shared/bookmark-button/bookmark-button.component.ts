@@ -10,8 +10,6 @@ export class BookmarkButtonComponent implements OnInit {
   @Input()
   post;
 
-  isBookmarked = false;
-
   constructor(private bookService: BookmarkService) {}
 
   ngOnInit() {}

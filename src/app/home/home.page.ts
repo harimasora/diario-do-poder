@@ -6,7 +6,6 @@ import { IonSlides } from '@ionic/angular';
 import { BehaviorSubject, of, combineLatest, Observable } from 'rxjs';
 import * as _ from 'lodash';
 import { switchMap, map, tap } from 'rxjs/operators';
-import { request } from 'http';
 
 @Component({
   selector: 'app-home',

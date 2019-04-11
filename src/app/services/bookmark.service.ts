@@ -34,7 +34,7 @@ export class BookmarkService {
       });
 
       await alert.present();
-      return;
+      return false;
     }
 
     const currentBookmarks = this.bookmarks.getValue();
@@ -44,5 +44,6 @@ export class BookmarkService {
     await this.db.updateAt(`users/${user.uid}`, {
       bookmarks: updatedBookmarks,
     });
+    return true;
   }
 }

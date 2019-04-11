@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>user-on</title>
+    <desc>Created with Sketch.</desc>
+    <g id="user-on" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M29.5,32 L29.5,28.6666667 C29.5,24.9847684 26.4779219,22 22.7499999,22 L9.24999998,22 C5.52207793,22 2.5,24.9847684 2.5,28.6666667 L2.5,32" id="Path" stroke="#CC2A2B" stroke-width="3"></path>
+        <circle id="Oval" stroke="#CC2A2B" stroke-width="3" cx="16" cy="10" r="8"></circle>
+    </g>
+</svg>

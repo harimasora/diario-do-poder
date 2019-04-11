@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>home-on</title>
+    <desc>Created with Sketch.</desc>
+    <g id="home-on" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M3,11.8 L16,2 L29,11.8 L29,27.2 C29,28.7463972 27.7066003,30 26.1111111,30 L5.88888889,30 C4.29339961,30 3,28.7463972 3,27.2 L3,11.8 Z" id="Path" stroke="#CC2A2B" stroke-width="3"></path>
+        <polyline id="Path" stroke="#CC2A2B" stroke-width="3" points="12 30 12 16 20 16 20 30"></polyline>
+    </g>
+</svg>

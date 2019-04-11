@@ -1,20 +1,20 @@
-<ion-tabs>
+<ion-tabs (ionTabsWillChange)="ionTabsWillChange($event)">
 
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="home">
-      <ion-icon name="home"></ion-icon>
+      <ion-icon [src]="icons.home"></ion-icon>
     </ion-tab-button>
 
     <ion-tab-button tab="bookmark">
-      <ion-icon name="bookmark"></ion-icon>
+      <ion-icon [src]="icons.bookmark"></ion-icon>
     </ion-tab-button>
 
     <ion-tab-button tab="search">
-      <ion-icon name="search"></ion-icon>
+      <ion-icon [src]="icons.search"></ion-icon>
     </ion-tab-button>
 
     <ion-tab-button tab="settings">
-      <ion-icon name="settings"></ion-icon>
+      <ion-icon src="/assets/icon/user-off.svg"></ion-icon>
     </ion-tab-button>
   </ion-tab-bar>
 

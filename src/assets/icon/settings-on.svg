@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>settings-on</title>
+    <desc>Created with Sketch.</desc>
+    <g id="settings-on" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M4,32 L4,20" id="Path" stroke="#CC2A2B" stroke-width="3"></path>
+        <path d="M4,12 L4,0" id="Path" stroke="#CC2A2B" stroke-width="3"></path>
+        <path d="M16,32 L16,16" id="Path" stroke="#CC2A2B" stroke-width="3"></path>
+        <path d="M16,9 L16,0" id="Path" stroke="#CC2A2B" stroke-width="3"></path>
+        <path d="M28,32 L28,23" id="Path" stroke="#CC2A2B" stroke-width="3"></path>
+        <path d="M28,16 L28,0" id="Path" stroke="#CC2A2B" stroke-width="3"></path>
+        <path d="M0,19.5 L9,19.5" id="Path" stroke="#CC2A2B" stroke-width="3"></path>
+        <path d="M12,9 L20,9" id="Path" stroke="#CC2A2B" stroke-width="3"></path>
+        <path d="M23,23 L32,23" id="Path" stroke="#CC2A2B" stroke-width="3"></path>
+    </g>
+</svg>

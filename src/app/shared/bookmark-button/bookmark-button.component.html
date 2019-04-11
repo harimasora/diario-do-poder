@@ -1,3 +1,4 @@
 <ion-button fill="clear" size="small" (click)="bookmark(postId)">
-  <ion-icon name="bookmark"></ion-icon>
+  <ion-icon [src]="post.isBookmarked ? '/assets/icon/bookmark-on.svg' : '/assets/icon/bookmark.svg'" size="small">
+  </ion-icon>
 </ion-button>
