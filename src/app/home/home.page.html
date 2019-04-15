@@ -20,7 +20,7 @@
       <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event, postsCH$, filters.CLAUDIO_HUMBERTO)">
         <ion-refresher-content></ion-refresher-content>
       </ion-refresher>
-      <app-news-ch *ngFor="let post of postsCH$ | async" [post]="post"></app-news-ch>
+      <app-news *ngFor="let post of postsCH$ | async" [post]="post"></app-news>
       <ion-infinite-scroll threshold="100px" (ionInfinite)="loadOlderPosts($event, postsCH$, filters.CLAUDIO_HUMBERTO)">
         <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Buscando mais notícias...">
         </ion-infinite-scroll-content>

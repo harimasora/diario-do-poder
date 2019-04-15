@@ -7,7 +7,6 @@ import { HeaderComponent } from './header/header.component';
 import { NewsComponent } from './news/news.component';
 import { RouterModule } from '@angular/router';
 import { ReaderComponent } from './reader/reader.component';
-import { NewsChComponent } from './news-ch/news-ch.component';
 import { NewsHumorComponent } from './news-humor/news-humor.component';
 import { BookmarkButtonComponent } from './bookmark-button/bookmark-button.component';
 import { MenuComponent } from './menu/menu.component';
@@ -24,7 +23,6 @@ import { CategoryPickerComponent } from './category-picker/category-picker.compo
     HeaderComponent,
     NewsComponent,
     ReaderComponent,
-    NewsChComponent,
     NewsHumorComponent,
     BookmarkButtonComponent,
     MenuComponent,
@@ -46,7 +44,6 @@ import { CategoryPickerComponent } from './category-picker/category-picker.compo
     HeaderComponent,
     NewsComponent,
     ReaderComponent,
-    NewsChComponent,
     NewsHumorComponent,
     BookmarkButtonComponent,
     MenuComponent,
