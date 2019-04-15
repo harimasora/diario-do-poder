@@ -8,12 +8,15 @@
   <ion-searchbar animated debounce="500" placeholder="Digite aqui para pesquisar..."
     (ionChange)="searchPosts(search.value)" #search>
   </ion-searchbar>
-  <div *ngIf="search.value">
-    <p>{{posts$.getValue().length || 0}} resultados para "{{search.value}}"</p>
+  <div *ngIf="search.value && !isLoading">
+    <p class="title">{{posts$.getValue().length || 0}} resultados para "{{search.value}}"</p>
     <app-news *ngFor="let post of posts$ | async" [post]="post"></app-news>
     <ion-infinite-scroll threshold="100px" (ionInfinite)="loadOlderPosts($event, posts$, options)">
       <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Buscando mais notícias...">
       </ion-infinite-scroll-content>
     </ion-infinite-scroll>
   </div>
+
+  <app-news-skeleton *ngIf="isLoading"></app-news-skeleton>
+
 </ion-content>

@@ -108,7 +108,7 @@ export class WordpressService {
       return posts.map(post => {
         const termArrays = post._embedded['wp:term'];
         const categories = _.sortBy(
-          termArrays.find(arr => (arr[0].taxonomy = 'category')),
+          termArrays.find(arr => arr[0] && arr[0].taxonomy === 'category'),
           'id',
         );
         return { ...post, categories };

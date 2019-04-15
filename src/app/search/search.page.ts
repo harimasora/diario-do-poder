@@ -11,6 +11,7 @@ import * as _ from 'lodash';
 export class SearchPage implements OnInit {
   posts$ = new BehaviorSubject([]);
   options = {};
+  isLoading = false;
 
   constructor(private wp: WordpressService) {}
 
@@ -19,10 +20,19 @@ export class SearchPage implements OnInit {
   async searchPosts(searchString) {
     if (!searchString) {
       this.posts$.next([]);
+      return;
     }
+
+    this.isLoading = true;
     this.options = { search: searchString };
-    const searchResults = await this.wp.getPosts(this.options).toPromise();
-    this.posts$.next(searchResults);
+    try {
+      const searchResults = await this.wp.getPosts(this.options).toPromise();
+      this.posts$.next(searchResults);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      this.isLoading = false;
+    }
   }
 
   async loadOlderPosts(event, array$: BehaviorSubject<any[]>, options?: any) {
