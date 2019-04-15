@@ -1,0 +1,26 @@
+/* Custom Skeleton Line Height and Margin */
+.custom-skeleton ion-skeleton-text {
+	line-height: 13px;
+}
+
+.custom-skeleton ion-skeleton-text:last-child {
+	margin-bottom: 5px;
+}
+
+.image-placeholder {
+	height: calc(100vw * 9 / 16);
+	margin-bottom: 12px;
+}
+
+.title-placeholder {
+	height: 21pt;
+	margin-bottom: 12px;
+}
+
+.content-placeholder {
+	height: 11pt;
+}
+
+.content-placeholder:last-child {
+	width: 40%;
+}

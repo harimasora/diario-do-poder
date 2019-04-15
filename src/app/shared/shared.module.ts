@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ShareButtonComponent } from './share-button/share-button.component';
 import { CategoryPickerComponent } from './category-picker/category-picker.component';
+import { NewsSkeletonComponent } from './news-skeleton/news-skeleton.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CategoryPickerComponent } from './category-picker/category-picker.compo
     SignInComponent,
     ShareButtonComponent,
     CategoryPickerComponent,
+    NewsSkeletonComponent,
   ],
   imports: [
     CommonModule,
@@ -51,6 +53,7 @@ import { CategoryPickerComponent } from './category-picker/category-picker.compo
     SignInComponent,
     ShareButtonComponent,
     CategoryPickerComponent,
+    NewsSkeletonComponent,
   ],
 })
 export class SharedModule {}
