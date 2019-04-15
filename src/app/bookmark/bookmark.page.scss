@@ -1,0 +1,33 @@
+.no-content {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.title {
+	color: #5C5C5C;
+	font-size: 14pt;
+	letter-spacing: 0.3pt;
+	font-weight: bold;
+	padding: 0;
+	margin: 0 40px;
+}
+
+.subtitle {
+	color: #727272;
+	font-weight: 300;
+	padding: 0;
+	margin: 16px 40px 40px;
+}
+
+.button-next {
+	--border-radius: 5px;
+	width: calc(100vw - 80px);
+	height: 50px;
+	font-size: 11pt;
+	letter-spacing: 0.3pt;
+	font-weight: 600;
+}
