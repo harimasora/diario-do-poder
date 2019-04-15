@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { SettingsPage } from './settings.page';
 import { CategoryPickerComponent } from '../shared/category-picker/category-picker.component';
+import { TermsOfUseComponent } from './../shared/terms-of-use/terms-of-use.component';
 import { PrivacyPolicyComponent } from './../shared/privacy-policy/privacy-policy.component';
 import { SharedModule } from '../shared/shared.module';
 
@@ -20,6 +21,10 @@ const routes: Routes = [
     path: 'category-picker',
     component: CategoryPickerComponent,
     canActivate: [LoginGuard],
+  },
+  {
+    path: 'terms-of-use',
+    component: TermsOfUseComponent,
   },
   {
     path: 'privacy-policy',

@@ -17,6 +17,7 @@ import { ShareButtonComponent } from './share-button/share-button.component';
 import { CategoryPickerComponent } from './category-picker/category-picker.component';
 import { NewsSkeletonComponent } from './news-skeleton/news-skeleton.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
     CategoryPickerComponent,
     NewsSkeletonComponent,
     PrivacyPolicyComponent,
+    TermsOfUseComponent,
   ],
   imports: [
     CommonModule,
@@ -57,6 +59,7 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
     CategoryPickerComponent,
     NewsSkeletonComponent,
     PrivacyPolicyComponent,
+    TermsOfUseComponent,
   ],
 })
 export class SharedModule {}
