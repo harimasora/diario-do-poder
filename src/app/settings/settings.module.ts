@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { SettingsPage } from './settings.page';
 import { CategoryPickerComponent } from '../shared/category-picker/category-picker.component';
+import { PrivacyPolicyComponent } from './../shared/privacy-policy/privacy-policy.component';
 import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
@@ -19,6 +20,10 @@ const routes: Routes = [
     path: 'category-picker',
     component: CategoryPickerComponent,
     canActivate: [LoginGuard],
+  },
+  {
+    path: 'privacy-policy',
+    component: PrivacyPolicyComponent,
   },
 ];
 
