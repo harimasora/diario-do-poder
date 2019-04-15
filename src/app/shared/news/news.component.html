@@ -1,15 +1,31 @@
-<div class="img-container">
-  <ion-img [src]="post.jetpack_featured_media_url || 'assets/images/image-placeholder.png'"></ion-img>
-  <div class="overlay" (click)="readPost()"></div>
-  <div class="buttons">
-    <app-share-button [post]="post"></app-share-button>
-    <app-bookmark-button [post]="post"></app-bookmark-button>
+<ng-container *ngIf="post.jetpack_featured_media_url; else noImageTemplate">
+  <div class="img-container">
+    <ion-img [src]="post.jetpack_featured_media_url || 'assets/images/image-placeholder.png'"></ion-img>
+    <div class="overlay" (click)="readPost()"></div>
+    <div class="buttons">
+      <app-share-button [post]="post"></app-share-button>
+      <app-bookmark-button [post]="post"></app-bookmark-button>
+    </div>
+    <div class="category" [innerHTML]="post.categories[0].name"></div>
   </div>
-  <div class="category" [innerHTML]="post.categories[0].name"></div>
-</div>
-<div class="red-line"></div>
-<div padding>
-  <h1 class="title" [innerHTML]="post.title.rendered" (click)="readPost()"></h1>
-  <p class="subtitle" [innerHTML]="post.acf.subtitulo"></p>
-  <p class="time">{{formatRelativeTime(post.date) | titlecase}}</p>
-</div>
+  <div class="red-line"></div>
+  <div padding>
+    <h1 class="title" [innerHTML]="post.title.rendered" (click)="readPost()"></h1>
+    <p class="subtitle" [innerHTML]="post.acf.subtitulo"></p>
+    <p class="time">{{formatRelativeTime(post.date) | titlecase}}</p>
+    <div class="separator"></div>
+  </div>
+</ng-container>
+
+<ng-template #noImageTemplate>
+  <div padding class="no-image-wrapper">
+    <p class="title" [innerHTML]="post.title.rendered"></p>
+    <p class="subtitle" [innerHTML]="post.content.rendered"></p>
+    <p class="time">{{formatAbsoluteDate(post.date)}}</p>
+    <div class="buttons">
+      <app-share-button [post]="post" iconKind="off"></app-share-button>
+      <app-bookmark-button [post]="post" iconKind="off"></app-bookmark-button>
+    </div>
+    <div class="separator"></div>
+  </div>
+</ng-template>

@@ -10,9 +10,26 @@ export class ShareButtonComponent implements OnInit {
   @Input()
   post;
 
+  @Input()
+  iconKind: string;
+
+  iconUrl = '/assets/icon/share.svg';
+
   constructor(private socialSharing: SocialSharing) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    switch (this.iconKind) {
+      case 'on':
+        this.iconUrl = '/assets/icon/share-on.svg';
+        break;
+      case 'off':
+        this.iconUrl = '/assets/icon/share-off.svg';
+        break;
+      default:
+        this.iconUrl = '/assets/icon/share.svg';
+        break;
+    }
+  }
 
   async share() {
     const options = {

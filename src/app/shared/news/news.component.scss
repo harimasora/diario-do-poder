@@ -65,3 +65,20 @@
 	right: 8pt;
 	top: 8pt;
 }
+
+.separator {
+	margin-top: 16px;
+	height: 1px;
+	width: 100%;
+	background-color: #E9E9E9;
+}
+
+.no-image-wrapper {
+	position: relative;
+
+	.buttons {
+		top: initial;
+		right: 8px;
+		bottom: 24px;
+	}
+}

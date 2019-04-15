@@ -53,6 +53,12 @@ export class NewsComponent implements OnInit {
       .fromNow();
   }
 
+  formatAbsoluteDate(ISODate: string) {
+    return moment(new Date(ISODate))
+      .locale('pt-br')
+      .format('DD/MM/YYYY [às] hh:mm');
+  }
+
   readPost() {
     const navigationExtras: NavigationExtras = {
       state: {
