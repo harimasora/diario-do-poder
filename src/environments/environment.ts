@@ -3,15 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-	production: false,
-	firebase: {
-		apiKey: 'AIzaSyCvl60bgGd1f6RV-O0Xh7Vd3IEn8mHphqU',
-		authDomain: 'diario-do-poder-e6458.firebaseapp.com',
-		databaseURL: 'https://diario-do-poder-e6458.firebaseio.com',
-		projectId: 'diario-do-poder-e6458',
-		storageBucket: 'diario-do-poder-e6458.appspot.com',
-		messagingSenderId: '638655416785',
-	},
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyA335TbZNGn6i_4CLzG5pbBep0IB9XO-JQ',
+    authDomain: 'app-diario-do-poder.firebaseapp.com',
+    databaseURL: 'https://app-diario-do-poder.firebaseio.com',
+    projectId: 'app-diario-do-poder',
+    storageBucket: 'app-diario-do-poder.appspot.com',
+    messagingSenderId: '578350250852',
+  },
 };
 
 /*

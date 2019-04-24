@@ -2,39 +2,35 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
-	<string>ca-app-pub-3940256099942544/2934735716</string>
-	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
-	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>638655416785-ch9t3a4h11q3ff5qm3k8jucpshr2hpi6.apps.googleusercontent.com</string>
+	<string>578350250852-k7v0o827bp6j7hvih1hjlg5lpfceoauh.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.638655416785-ch9t3a4h11q3ff5qm3k8jucpshr2hpi6</string>
+	<string>com.googleusercontent.apps.578350250852-k7v0o827bp6j7hvih1hjlg5lpfceoauh</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDMHXZJednu25LGsaeQ8Uurq1MFl8PBweE</string>
+	<string>AIzaSyB-I__CHZd8EH1-TI7K4VefCigyrDOtJH0</string>
 	<key>GCM_SENDER_ID</key>
-	<string>638655416785</string>
+	<string>578350250852</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>br.com.yellowtreesoftware.diariodopoder</string>
 	<key>PROJECT_ID</key>
-	<string>diario-do-poder-e6458</string>
+	<string>app-diario-do-poder</string>
 	<key>STORAGE_BUCKET</key>
-	<string>diario-do-poder-e6458.appspot.com</string>
+	<string>app-diario-do-poder.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true></true>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
 	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false></false>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
 	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:638655416785:ios:018127435a04806b</string>
+	<string>1:578350250852:ios:018127435a04806b</string>
 	<key>DATABASE_URL</key>
-	<string>https://diario-do-poder-e6458.firebaseio.com</string>
+	<string>https://app-diario-do-poder.firebaseio.com</string>
 </dict>
 </plist>
