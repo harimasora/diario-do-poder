@@ -28,9 +28,9 @@ export class FcmService {
   }
 
   getPermission() {
-    return this.afMessaging.requestToken.pipe(
-      tap(token => (this.token = token)),
-    );
+    return this.afMessaging.requestToken
+      .pipe(tap(token => (this.token = token)))
+      .subscribe();
   }
 
   showMessages() {
