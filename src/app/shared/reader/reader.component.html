@@ -4,14 +4,14 @@
       <ion-back-button defaultHref="/" [text]="'Voltar'"></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button>
+      <ion-button (click)="presentPopover($event)">
         <ion-icon slot="icon-only" name="more"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen>
+<ion-content #popoverContent fullscreen>
   <div *ngIf="!post.featured_video" class="img-container">
     <ion-img [src]="post.jetpack_featured_media_url || 'assets/images/image-placeholder.png'"></ion-img>
     <div class="overlay"></div>
@@ -22,7 +22,7 @@
     </iframe>
   </div>
   <div class="red-line"></div>
-  <div padding>
+  <div #popoverText padding>
     <h1 class="title" [innerHTML]="post.title.rendered" (click)="readPost()"></h1>
     <p class="subtitle" [innerHTML]="post.acf.subtitulo"></p>
     <div class="author">
