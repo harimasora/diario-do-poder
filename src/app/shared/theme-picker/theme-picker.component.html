@@ -1,0 +1,64 @@
+<ion-list>
+  <ion-row>
+    <ion-col>
+      <button (click)="changeFontSize('smaller')" ion-item detail-none
+        class="popover-text-button popover-text-smaller">A</button>
+    </ion-col>
+    <ion-col>
+      <button (click)="changeFontSize('larger')" ion-item detail-none
+        class="popover-text-button popover-text-larger">A</button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="popover-row-dots">
+    <ion-col>
+      <button (click)="changeBackground('white')" class="popover-dot popover-dot-white"
+        [class.selected]="background == 'white'"></button>
+    </ion-col>
+    <ion-col>
+      <button (click)="changeBackground('tan')" class="popover-dot popover-dot-tan"
+        [class.selected]="background == 'tan'"></button>
+    </ion-col>
+    <ion-col>
+      <button (click)="changeBackground('grey')" class="popover-dot popover-dot-grey"
+        [class.selected]="background == 'grey'"></button>
+    </ion-col>
+    <ion-col>
+      <button (click)="changeBackground('black')" class="popover-dot popover-dot-black"
+        [class.selected]="background == 'black'"></button>
+    </ion-col>
+  </ion-row>
+  <ion-radio-group [(ngModel)]="fontFamily" (ionSelect)="changeFontFamily()">
+    <ion-list-header>
+      Fonte
+    </ion-list-header>
+
+    <ion-item class="popover-text-athelas">
+      <ion-label>Athelas</ion-label>
+      <ion-radio value="Athelas"></ion-radio>
+    </ion-item>
+    <ion-item class="popover-text-charter">
+      <ion-label>Charter</ion-label>
+      <ion-radio value="Charter"></ion-radio>
+    </ion-item>
+    <ion-item class="popover-text-iowan">
+      <ion-label>Iowan</ion-label>
+      <ion-radio value="Iowan"></ion-radio>
+    </ion-item>
+    <ion-item class="popover-text-palatino">
+      <ion-label>Palatino</ion-label>
+      <ion-radio value="Palatino"></ion-radio>
+    </ion-item>
+    <ion-item class="popover-text-san-francisco">
+      <ion-label>San Francisco</ion-label>
+      <ion-radio value="San Francisco"></ion-radio>
+    </ion-item>
+    <ion-item class="popover-text-seravek">
+      <ion-label>Seravek</ion-label>
+      <ion-radio value="Seravek"></ion-radio>
+    </ion-item>
+    <ion-item class="popover-text-times-new-roman">
+      <ion-label>Times New Roman</ion-label>
+      <ion-radio value="Times New Roman"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+</ion-list>

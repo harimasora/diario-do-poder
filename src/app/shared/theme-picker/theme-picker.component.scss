@@ -1,0 +1,127 @@
+.popover-text-button {
+	padding-left: 0;
+	text-align: center;
+	min-height: 20px;
+	line-height: 18px;
+}
+
+.popover-text-button .item-inner {
+	padding-right: 0;
+}
+
+.popover-text-smaller {
+	font-size: 12px;
+}
+
+.popover-text-larger {
+	font-size: 16px;
+}
+
+.popover-row-dots {
+	text-align: center;
+}
+
+.popover-dot {
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	margin: 10px auto;
+	position: relative;
+}
+
+.popover-dot-white {
+	background-color: rgb(255, 255, 255);
+}
+
+.popover-dot-tan {
+	background-color: rgb(249, 241, 228);
+}
+
+.popover-dot-grey {
+	background-color: rgb(76, 75, 80);
+}
+
+.popover-dot-black {
+	background-color: rgb(0, 0, 0);
+}
+
+.ios .popover-dot.selected,
+.md .popover-dot.selected,
+.wp .popover-dot.selected {
+	border-width: 2px;
+	border-color: #327eff;
+}
+
+.popover-text-athelas {
+	font-family: "Athelas";
+}
+
+.popover-text-charter {
+	font-family: "Charter";
+}
+
+.popover-text-iowan {
+	font-family: "Iowan";
+}
+
+.popover-text-palatino {
+	font-family: "Palatino";
+}
+
+.popover-text-san-francisco {
+	font-family: "San Francisco";
+}
+
+.popover-text-seravek {
+	font-family: "Seravek";
+}
+
+.popover-text-times-new-roman {
+	font-family: "Times New Roman";
+}
+
+/*
+  iOS Popover
+*/
+
+.ios .popover-text-smaller {
+	border-right: 1px solid #c8c7cc;
+}
+
+.ios .popover-row-dots {
+	border-bottom: 1px solid #c8c7cc;
+}
+
+.ios .popover-dot {
+	border: 1px solid #c8c7cc;
+}
+
+.hairlines .popover-text-smaller,
+.hairlines .popover-row-dots,
+.hairlines .popover-dot {
+	border-width: 0.55px;
+}
+
+/*
+  Material Design Popover
+*/
+
+.md .popover-text-smaller {
+	border-right: 1px solid #dedede;
+}
+
+.md .popover-row-dots {
+	border-bottom: 1px solid #dedede;
+}
+
+.md .popover-dot {
+	border: 1px solid #dedede;
+}
+
+/*
+  Windows Popover
+*/
+
+.wp .popover-dot {
+	border: 2px solid #ccc;
+}
