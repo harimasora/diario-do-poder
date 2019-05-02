@@ -25,11 +25,13 @@ export class NewsComponent implements OnInit {
   ngOnInit() {
     this.bookmarkedPostIds$ = this.bookService.bookmarks.asObservable();
     this.bookmarkedPostIds$.subscribe(ids => {
-      const isBookmarked = ids.includes(this.post.id);
-      this.post = {
-        ...this.post,
-        isBookmarked,
-      };
+      if (ids) {
+        const isBookmarked = ids.includes(this.post.id);
+        this.post = {
+          ...this.post,
+          isBookmarked,
+        };
+      }
     });
   }
 
