@@ -1,8 +1,12 @@
 .popover-text-button {
-	padding-left: 0;
-	text-align: center;
+	--padding-start: 0;
+	--inner-padding-end: 0;
 	min-height: 20px;
 	line-height: 18px;
+}
+
+.popover-text-button ion-label {
+	margin: 0;
 }
 
 .popover-text-button .item-inner {
@@ -22,34 +26,37 @@
 }
 
 .popover-dot {
-	height: 30px;
-	width: 30px;
-	border-radius: 50%;
+	height: 40px;
+	width: 40px;
+	--border-radius: 50%;
 	margin: 10px auto;
 	position: relative;
 }
 
 .popover-dot-white {
-	background-color: rgb(255, 255, 255);
+	--background: rgb(255, 255, 255);
+	--background-activated: rgb(235, 235, 235);
 }
 
 .popover-dot-tan {
-	background-color: rgb(249, 241, 228);
+	--background: rgb(249, 241, 228);
+	--background-activated: rgb(229, 221, 208);
 }
 
 .popover-dot-grey {
-	background-color: rgb(76, 75, 80);
+	--background: rgb(76, 75, 80);
+	--background-activated: rgb(56, 55, 60);
 }
 
 .popover-dot-black {
-	background-color: rgb(0, 0, 0);
+	--background: rgb(0, 0, 0);
+	--background-activated: rgb(0, 0, 0);
 }
 
-.ios .popover-dot.selected,
-.md .popover-dot.selected,
-.wp .popover-dot.selected {
-	border-width: 2px;
-	border-color: #327eff;
+.popover-dot.selected {
+	--border-style: solid;
+	--border-width: 2px;
+	--border-color: var(--ion-color-primary);
 }
 
 .popover-text-athelas {

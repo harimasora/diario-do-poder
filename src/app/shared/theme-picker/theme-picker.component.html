@@ -1,30 +1,32 @@
 <ion-list>
   <ion-row>
     <ion-col>
-      <button (click)="changeFontSize('smaller')" ion-item detail-none
-        class="popover-text-button popover-text-smaller">A</button>
+      <ion-item (click)="changeFontSize('smaller')" class="popover-text-button popover-text-smaller">
+        <ion-label text-center>A</ion-label>
+      </ion-item>
     </ion-col>
     <ion-col>
-      <button (click)="changeFontSize('larger')" ion-item detail-none
-        class="popover-text-button popover-text-larger">A</button>
+      <ion-item (click)="changeFontSize('larger')" class="popover-text-button popover-text-larger" text-center>
+        <ion-label text-center>A</ion-label>
+      </ion-item>
     </ion-col>
   </ion-row>
   <ion-row class="popover-row-dots">
     <ion-col>
-      <button (click)="changeBackground('white')" class="popover-dot popover-dot-white"
-        [class.selected]="background == 'white'"></button>
+      <ion-button (click)="changeBackground('white')" class="popover-dot popover-dot-white"
+        [class.selected]="background == 'white'"></ion-button>
     </ion-col>
     <ion-col>
-      <button (click)="changeBackground('tan')" class="popover-dot popover-dot-tan"
-        [class.selected]="background == 'tan'"></button>
+      <ion-button (click)="changeBackground('tan')" class="popover-dot popover-dot-tan"
+        [class.selected]="background == 'tan'"></ion-button>
     </ion-col>
     <ion-col>
-      <button (click)="changeBackground('grey')" class="popover-dot popover-dot-grey"
-        [class.selected]="background == 'grey'"></button>
+      <ion-button (click)="changeBackground('grey')" class="popover-dot popover-dot-grey"
+        [class.selected]="background == 'grey'"></ion-button>
     </ion-col>
     <ion-col>
-      <button (click)="changeBackground('black')" class="popover-dot popover-dot-black"
-        [class.selected]="background == 'black'"></button>
+      <ion-button (click)="changeBackground('black')" class="popover-dot popover-dot-black"
+        [class.selected]="background == 'black'"></ion-button>
     </ion-col>
   </ion-row>
   <ion-radio-group [(ngModel)]="fontFamily" (ionSelect)="changeFontFamily()">
@@ -32,32 +34,32 @@
       Fonte
     </ion-list-header>
 
-    <ion-item class="popover-text-athelas">
-      <ion-label>Athelas</ion-label>
+    <ion-item>
+      <ion-label class="popover-text-athelas">Athelas</ion-label>
       <ion-radio value="Athelas"></ion-radio>
     </ion-item>
-    <ion-item class="popover-text-charter">
-      <ion-label>Charter</ion-label>
+    <ion-item>
+      <ion-label class="popover-text-charter">Charter</ion-label>
       <ion-radio value="Charter"></ion-radio>
     </ion-item>
-    <ion-item class="popover-text-iowan">
-      <ion-label>Iowan</ion-label>
+    <ion-item>
+      <ion-label class="popover-text-iowan">Iowan</ion-label>
       <ion-radio value="Iowan"></ion-radio>
     </ion-item>
-    <ion-item class="popover-text-iowan">
-      <ion-label>Open Sans</ion-label>
+    <ion-item>
+      <ion-label class="popover-text-iowan">Open Sans</ion-label>
       <ion-radio value="Open Sans"></ion-radio>
     </ion-item>
-    <ion-item class="popover-text-palatino">
-      <ion-label>Palatino</ion-label>
+    <ion-item>
+      <ion-label class="popover-text-palatino">Palatino</ion-label>
       <ion-radio value="Palatino"></ion-radio>
     </ion-item>
-    <ion-item class="popover-text-san-francisco">
-      <ion-label>San Francisco</ion-label>
+    <ion-item>
+      <ion-label class="popover-text-san-francisco">San Francisco</ion-label>
       <ion-radio value="San Francisco"></ion-radio>
     </ion-item>
-    <ion-item class="popover-text-seravek">
-      <ion-label>Seravek</ion-label>
+    <ion-item>
+      <ion-label class="popover-text-seravek">Seravek</ion-label>
       <ion-radio value="Seravek"></ion-radio>
     </ion-item>
   </ion-radio-group>
