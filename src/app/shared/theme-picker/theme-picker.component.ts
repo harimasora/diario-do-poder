@@ -73,8 +73,35 @@ export class ThemePickerComponent implements OnInit {
     this.textEle.style.color = this.colors[color].fg;
   }
 
-  changeFontSize(direction: string) {
-    this.textEle.style.fontSize = direction;
+  changeFontSize(direction: 'smaller' | 'larger') {
+    const fontSizeText: string = this.textEle.style.fontSize;
+    let fontSizeNumber: number;
+
+    if (!fontSizeText) {
+      fontSizeNumber = 1; // 1em
+    } else {
+      fontSizeNumber = Number(fontSizeText.split('em')[0]);
+    }
+
+    switch (direction) {
+      case 'larger': {
+        if (fontSizeNumber >= 1.3) {
+          break;
+        } else {
+          fontSizeNumber += 0.1;
+          break;
+        }
+      }
+      case 'smaller': {
+        if (fontSizeNumber <= 0.7) {
+          break;
+        } else {
+          fontSizeNumber -= 0.1;
+        }
+      }
+    }
+
+    this.textEle.style.fontSize = fontSizeNumber + 'em';
   }
 
   changeFontFamily() {
